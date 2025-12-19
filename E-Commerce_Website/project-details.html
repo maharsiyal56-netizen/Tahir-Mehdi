@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore E-Commerce | Project Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary-color: #7c3aed;
+            --accent-color: #f59e0b;
+            --text-color: #1f2937;
+            --text-light: #6b7280;
+            --bg-color: #ffffff;
+            --bg-light: #f9fafb;
+            --bg-dark: #111827;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --radius: 8px;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .project-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+
+        .project-header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .project-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .project-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .project-tag {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Navigation */
+        .project-nav {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .project-nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        .project-nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .project-nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius);
+        }
+
+        .project-nav-links a:hover,
+        .project-nav-links a.active {
+            color: var(--primary-color);
+            background-color: rgba(37, 99, 235, 0.1);
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--bg-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Project Overview */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .overview-card {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .overview-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .overview-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .overview-card h3 {
+            margin-bottom: 1rem;
+            color: var(--bg-dark);
+        }
+
+        /* Features */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .feature-card:hover {
+            transform: translateX(10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--bg-dark);
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+        }
+
+        /* Tech Stack */
+        .tech-stack {
+            background-color: white;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-card {
+            background-color: var(--bg-light);
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .tech-card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .tech-card h4 {
+            color: var(--bg-dark);
+        }
+
+        /* Screenshots */
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .screenshot-card {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .screenshot-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .screenshot-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .screenshot-card:hover .screenshot-image img {
+            transform: scale(1.05);
+        }
+
+        .screenshot-info {
+            padding: 1.5rem;
+        }
+
+        .screenshot-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--bg-dark);
+        }
+
+        .screenshot-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* File Structure */
+        .file-structure {
+            background-color: white;
+        }
+
+        .structure-tree {
+            background-color: var(--bg-light);
+            border-radius: var(--radius);
+            padding: 2rem;
+            margin-top: 3rem;
+            font-family: 'Courier New', monospace;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .folder {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+
+        .folder::before {
+            content: '📁 ';
+        }
+
+        .file {
+            color: var(--text-color);
+            margin-left: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .file::before {
+            content: '📄 ';
+        }
+
+        .file.html::before {
+            content: '🌐 ';
+            color: #e34c26;
+        }
+
+        .file.css::before {
+            content: '🎨 ';
+            color: #264de4;
+        }
+
+        .file.js::before {
+            content: '⚡ ';
+            color: #f0db4f;
+        }
+
+        .file.json::before {
+            content: '📊 ';
+            color: var(--success-color);
+        }
+
+        /* How to Run */
+        .steps-container {
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .step {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 30px;
+            width: 2px;
+            height: calc(100% + 1rem);
+            background-color: var(--border-color);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-content {
+            flex: 1;
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .step-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--bg-dark);
+        }
+
+        /* CTA */
+        .project-cta {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .project-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-cta p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border-radius: var(--radius);
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--bg-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        .project-footer {
+            background-color: var(--bg-dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .project-footer p {
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            color: var(--primary-color);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .project-nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+            
+            .step {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .step:not(:last-child)::after {
+                display: none;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-title {
+                font-size: 2rem;
+            }
+            
+            .features-grid,
+            .screenshot-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="project-header">
+        <div class="container">
+            <div class="project-header-content">
+                <h1 class="project-title">TechStore E-Commerce Website</h1>
+                <p class="project-subtitle">A fully responsive modern e-commerce platform with complete shopping cart functionality, built with HTML, CSS, and JavaScript</p>
+                <div class="project-tags">
+                    <span class="project-tag">HTML5</span>
+                    <span class="project-tag">CSS3</span>
+                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">Responsive Design</span>
+                    <span class="project-tag">E-Commerce</span>
+                    <span class="project-tag">Shopping Cart</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="project-nav">
+        <div class="container project-nav-container">
+            <ul class="project-nav-links">
+                <li><a href="#overview" class="active">Overview</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#tech">Tech Stack</a></li>
+                <li><a href="#screenshots">Screenshots</a></li>
+                <li><a href="#structure">File Structure</a></li>
+                <li><a href="#run">How to Run</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Project Overview -->
+    <section class="section" id="overview">
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Complete E-Commerce Solution</h3>
+                    <p>Full-featured online store with product listings, shopping cart, and checkout process</p>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Fully Responsive</h3>
+                    <p>Optimized for all devices - desktop, tablet, and mobile with modern UI/UX</p>
+                </div>
+                
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Clean Code</h3>
+                    <p>Well-structured, commented code following modern web development practices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features" style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Modern Homepage</h3>
+                    <p>Hero section with promotional banner, featured products grid, category browsing, and newsletter signup</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-th"></i>
+                    </div>
+                    <h3>Product Listing Page</h3>
+                    <p>Responsive product grid with filtering by category, price range, ratings, and sorting options</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Product Detail Page</h3>
+                    <p>Detailed product view with image carousel, description, specifications, and related products</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Shopping Cart</h3>
+                    <p>Add/remove items, update quantities, calculate totals with tax and shipping</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Checkout Process</h3>
+                    <p>Multi-step checkout with form validation, payment options, and order confirmation</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>User Experience</h3>
+                    <p>Responsive navigation, smooth animations, hover effects, and intuitive interface</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="section tech-stack" id="tech">
+        <div class="container">
+            <h2 class="section-title">Technology Stack</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h4>HTML5</h4>
+                    <p>Semantic markup for structure</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h4>CSS3</h4>
+                    <p>Modern styling with Flexbox/Grid</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h4>JavaScript</h4>
+                    <p>Interactive functionality</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4>Local Storage</h4>
+                    <p>Cart persistence</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-font-awesome"></i>
+                    </div>
+                    <h4>Font Awesome</h4>
+                    <p>Icons and UI elements</p>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h4>Google Fonts</h4>
+                    <p>Typography system</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section" id="screenshots">
+        <div class="container">
+            <h2 class="section-title">Project Screenshots</h2>
+            <div class="screenshot-grid">
+                <div class="screenshot-card">
+                    <div class="screenshot-image">
+                        <!-- Placeholder for homepage screenshot -->
+                        <div style="width:100%;height:100%;background:linear-gradient(135deg, #2563eb, #7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;">
+                            Homepage
+                        </div>
+                    </div>
+                    <div class="screenshot-info">
+                        <h3>Homepage / Landing Page</h3>
+                        <p>Modern hero section, featured products, category browsing</p>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="screenshot-image">
+                        <!-- Placeholder for products page screenshot -->
+                        <div style="width:100%;height:100%;background:linear-gradient(135deg, #10b981, #0d9488);display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;">
+                            Products Page
+                        </div>
+                    </div>
+                    <div class="screenshot-info">
+                        <h3>Product Listing</h3>
+                        <p>Grid layout with filtering and sorting options</p>
+                    </div>
+                </div>
+                
+                <div class="screenshot-card">
+                    <div class="screenshot-image">
+                        <!-- Placeholder for cart page screenshot -->
+                        <div style="width:100%;height:100%;background:linear-gradient(135deg, #f59e0b, #d97706);display:flex;align-items:center;justify-content:center;color:white;font-size:1.5rem;">
+                            Shopping Cart
+                        </div>
+                    </div>
+                    <div class="screenshot-info">
+                        <h3>Shopping Cart</h3>
+                        <p>Cart management with quantity controls and totals</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- File Structure -->
+    <section class="section file-structure" id="structure">
+        <div class="container">
+            <h2 class="section-title">Project Structure</h2>
+            <div class="structure-tree">
+                <div class="folder">techstore-ecommerce/
+                    <div class="folder">images/
+                        <div class="file">logo.png</div>
+                        <div class="file">product-1.jpg</div>
+                        <div class="file">product-2.jpg</div>
+                    </div>
+                    <div class="file html">index.html</div>
+                    <div class="file html">products.html</div>
+                    <div class="file html">product-detail.html</div>
+                    <div class="file html">cart.html</div>
+                    <div class="file html">checkout.html</div>
+                    <div class="file html">categories.html</div>
+                    <div class="file html">deals.html</div>
+                    <div class="file html">about.html</div>
+                    <div class="file html">contact.html</div>
+                    <div class="file css">style.css</div>
+                    <div class="file js">script.js</div>
+                    <div class="file json">products.json</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Run -->
+    <section class="section" id="run" style="background-color: var(--bg-light);">
+        <div class="container">
+            <h2 class="section-title">How to Run the Project</h2>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Download Files</h3>
+                        <p>Download all the HTML, CSS, JS, and image files into a single folder named "techstore-ecommerce"</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Open in Browser</h3>
+                        <p>Open the <code>index.html</code> file in any modern web browser (Chrome, Firefox, Edge, Safari)</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Explore the Website</h3>
+                        <p>Navigate through all pages using the header menu. Test the shopping cart functionality by adding products to cart and proceeding to checkout</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Local Development</h3>
+                        <p>For development, use a code editor like VS Code. The project runs completely locally with no server requirements</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="project-cta">
+        <div class="container">
+            <h2>Ready to Explore TechStore?</h2>
+            <p>Experience the complete e-commerce website with all features implemented</p>
+            <div class="cta-buttons">
+                <a href="index.html" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Open Website
+                </a>
+                <a href="#overview" class="btn btn-secondary">
+                    <i class="fas fa-info-circle"></i> Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="project-footer">
+        <div class="container">
+            <p>TechStore E-Commerce Website Project</p>
+            <p>Developed with modern web technologies - HTML, CSS, and JavaScript</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                <a href="#"><i class="fas fa-code"></i> Source Code</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.project-nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links
+                document.querySelectorAll('.project-nav-links a').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Scroll to target section
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Update active nav link on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.section');
+            const navLinks = document.querySelectorAll('.project-nav-links a');
+            
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (window.scrollY >= sectionTop - 100) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Animation for feature cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+
+        // Animate overview cards
+        document.querySelectorAll('.overview-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
+            
+            setTimeout(() => {
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 500 + (index * 100));
+        });
+
+        // File structure interaction
+        document.querySelectorAll('.folder').forEach(folder => {
+            folder.addEventListener('click', function() {
+                this.classList.toggle('open');
+            });
+        });
+
+        // Tech cards hover effect enhancement
+        document.querySelectorAll('.tech-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = 'var(--shadow-lg)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
