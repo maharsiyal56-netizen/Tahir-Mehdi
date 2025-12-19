@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deals & Offers | TechStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><i class="fas fa-bolt"></i> <span>Tech</span>Store</a>
+                </div>
+                
+                <nav class="navbar">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="deals.html" class="active">Deals</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="#" class="icon-link"><i class="far fa-user"></i></a>
+                        <a href="cart.html" class="icon-link cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Deals Page Content -->
+    <main class="deals-page">
+        <!-- Hero Banner -->
+        <section class="deals-hero">
+            <div class="container">
+                <div class="deals-hero-content">
+                    <div class="deals-hero-text">
+                        <h1>Big Summer Sale!</h1>
+                        <h2>Up to 50% Off Select Items</h2>
+                        <p>Limited time offers on top electronics. Don't miss out on these amazing deals!</p>
+                        <div class="countdown-timer" id="countdown-timer">
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="days">00</span>
+                                <span class="countdown-label">Days</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="hours">00</span>
+                                <span class="countdown-label">Hours</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="minutes">00</span>
+                                <span class="countdown-label">Minutes</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="seconds">00</span>
+                                <span class="countdown-label">Seconds</span>
+                            </div>
+                        </div>
+                        <a href="#featured-deals" class="btn btn-primary">Shop Now</a>
+                    </div>
+                    <div class="deals-hero-image">
+                        <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Summer Sale">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Featured Deals -->
+        <section class="featured-deals" id="featured-deals">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Deals</h2>
+                    <div class="deal-filters">
+                        <button class="filter-btn active" data-filter="all">All Deals</button>
+                        <button class="filter-btn" data-filter="hot">Hot Deals</button>
+                        <button class="filter-btn" data-filter="today">Today Only</button>
+                        <button class="filter-btn" data-filter="weekend">Weekend Specials</button>
+                    </div>
+                </div>
+                
+                <div class="products-grid" id="deals-products">
+                    <!-- Deals will be loaded via JavaScript -->
+                </div>
+            </div>
+        </section>
+        
+        <!-- Flash Sale -->
+        <section class="flash-sale">
+            <div class="container">
+                <div class="flash-sale-header">
+                    <h2><i class="fas fa-bolt"></i> Flash Sale</h2>
+                    <div class="flash-timer">
+                        <span>Ends in:</span>
+                        <div class="flash-countdown" id="flash-countdown">
+                            <span>02:15:30</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flash-products">
+                    <div class="flash-product-card">
+                        <div class="flash-badge">FLASH SALE</div>
+                        <div class="flash-product-image">
+                            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Smartwatch">
+                            <div class="discount-badge">-40%</div>
+                        </div>
+                        <div class="flash-product-info">
+                            <h3>Smartwatch Pro X</h3>
+                            <div class="flash-price">
+                                <span class="current-price">$199.99</span>
+                                <span class="original-price">$329.99</span>
+                            </div>
+                            <div class="stock-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 75%"></div>
+                                </div>
+                                <div class="stock-text">Only 15 left</div>
+                            </div>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="flash-product-card">
+                        <div class="flash-badge">FLASH SALE</div>
+                        <div class="flash-product-image">
+                            <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Headphones">
+                            <div class="discount-badge">-35%</div>
+                        </div>
+                        <div class="flash-product-info">
+                            <h3>Noise Cancelling Headphones</h3>
+                            <div class="flash-price">
+                                <span class="current-price">$149.99</span>
+                                <span class="original-price">$229.99</span>
+                            </div>
+                            <div class="stock-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 60%"></div>
+                                </div>
+                                <div class="stock-text">Only 22 left</div>
+                            </div>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                    
+                    <div class="flash-product-card">
+                        <div class="flash-badge">FLASH SALE</div>
+                        <div class="flash-product-image">
+                            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Laptop">
+                            <div class="discount-badge">-25%</div>
+                        </div>
+                        <div class="flash-product-info">
+                            <h3>Ultrabook Pro 14"</h3>
+                            <div class="flash-price">
+                                <span class="current-price">$899.99</span>
+                                <span class="original-price">$1199.99</span>
+                            </div>
+                            <div class="stock-progress">
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 40%"></div>
+                                </div>
+                                <div class="stock-text">Only 8 left</div>
+                            </div>
+                            <button class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Daily Deals -->
+        <section class="daily-deals">
+            <div class="container">
+                <h2 class="section-title">Daily Deals</h2>
+                <div class="daily-deals-tabs">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-day="monday">Monday</button>
+                        <button class="tab-btn" data-day="tuesday">Tuesday</button>
+                        <button class="tab-btn" data-day="wednesday">Wednesday</button>
+                        <button class="tab-btn" data-day="thursday">Thursday</button>
+                        <button class="tab-btn" data-day="friday">Friday</button>
+                        <button class="tab-btn" data-day="weekend">Weekend</button>
+                    </div>
+                    
+                    <div class="tab-content active" id="monday-deals">
+                        <div class="daily-deals-grid">
+                            <!-- Monday deals will be loaded via JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" id="tuesday-deals">
+                        <div class="daily-deals-grid">
+                            <!-- Tuesday deals will be loaded via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Newsletter Section -->
+        <section class="deal-newsletter">
+            <div class="container">
+                <div class="newsletter-content">
+                    <h2>Get Exclusive Deals</h2>
+                    <p>Subscribe to our newsletter and be the first to know about upcoming sales and exclusive offers.</p>
+                    <form class="deal-newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    <p class="newsletter-note">By subscribing, you agree to our Privacy Policy and consent to receive deal alerts.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <a href="index.html"><i class="fas fa-bolt"></i> <span>Tech</span>Store</a>
+                    </div>
+                    <p>Your destination for the latest electronics and gadgets. Quality products with exceptional customer service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new arrivals & special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 TechStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Deals Page Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize cart count
+            updateCartCount();
+            
+            // Initialize countdown timer
+            initializeCountdown();
+            
+            // Initialize flash sale countdown
+            initializeFlashCountdown();
+            
+            // Load deals products
+            loadDealsProducts();
+            
+            // Load daily deals
+            loadDailyDeals();
+            
+            // Setup event listeners
+            setupDealsEventListeners();
+            
+            // Mobile menu toggle
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+            
+            // Newsletter form submission
+            const newsletterForms = document.querySelectorAll('.newsletter-form, .deal-newsletter-form');
+            newsletterForms.forEach(form => {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    alert(`Thank you for subscribing with ${email}! You'll receive exclusive deals soon.`);
+                    this.reset();
+                });
+            });
+        });
+        
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            const cartCountElements = document.querySelectorAll('.cart-count');
+            
+            cartCountElements.forEach(element => {
+                element.textContent = cartCount;
+            });
+        }
+        
+        // Initialize countdown timer
+        function initializeCountdown() {
+            // Set countdown to 7 days from now
+            const countdownDate = new Date();
+            countdownDate.setDate(countdownDate.getDate() + 7);
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                
+                // Calculate days, hours, minutes, seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                // Update display
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+                
+                // If countdown finished
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('countdown-timer').innerHTML = '<h3>Sale Ended!</h3>';
+                }
+            }
+            
+            // Update immediately
+            updateCountdown();
+            
+            // Update every second
+            const countdownInterval = setInterval(updateCountdown, 1000);
+        }
+        
+        // Initialize flash sale countdown
+        function initializeFlashCountdown() {
+            const flashTimer = document.getElementById('flash-countdown');
+            if (!flashTimer) return;
+            
+            let timeLeft = 2 * 60 * 60 + 15 * 60 + 30; // 2 hours, 15 minutes, 30 seconds
+            
+            function updateFlashCountdown() {
+                if (timeLeft <= 0) {
+                    flashTimer.innerHTML = '<span>Sale Ended!</span>';
+                    return;
+                }
+                
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+                
+                flashTimer.innerHTML = `<span>${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}</span>`;
+                
+                timeLeft--;
+            }
+            
+            // Update immediately
+            updateFlashCountdown();
+            
+            // Update every second
+            setInterval(updateFlashCountdown, 1000);
+        }
+        
+        // Load deals products
+        function loadDealsProducts() {
+            const dealsProducts = [
+                {
+                    id: 101,
+                    name: "Wireless Earbuds Pro",
+                    category: "audio",
+                    price: 79.99,
+                    oldPrice: 129.99,
+                    rating: 4.5,
+                    reviews: 89,
+                    description: "True wireless earbuds with noise cancellation",
+                    image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    discount: 38,
+                    tag: "hot"
+                },
+                {
+                    id: 102,
+                    name: "Gaming Mouse RGB",
+                    category: "accessories",
+                    price: 39.99,
+                    oldPrice: 59.99,
+                    rating: 4.3,
+                    reviews: 142,
+                    description: "High-precision gaming mouse with RGB lighting",
+                    image: "https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    discount: 33,
+                    tag: "today"
+                },
+                {
+                    id: 103,
+                    name: "Tablet 10.5\" Display",
+                    category: "tablets",
+                    price: 299.99,
+                    oldPrice: 399.99,
+                    rating: 4.4,
+                    reviews: 67,
+                    description: "10.5\" tablet with stylus support",
+                    image: "https://images.unsplash.com/photo-1548932990-17f4e62b9b4c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    discount: 25,
+                    tag: "weekend"
+                },
+                {
+                    id: 104,
+                    name: "Portable Bluetooth Speaker",
+                    category: "audio",
+                    price: 59.99,
+                    oldPrice: 89.99,
+                    rating: 4.6,
+                    reviews: 203,
+                    description: "Waterproof Bluetooth speaker with 20-hour battery",
+                    image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    discount: 33,
+                    tag: "hot"
+                },
+                {
+                    id: 105,
+                    name: "Mechanical Keyboard",
+                    category: "accessories",
+                    price: 89.99,
+                    oldPrice: 129.99,
+                    rating: 4.7,
+                    reviews: 98,
+                    description: "RGB mechanical keyboard with customizable keys",
+                    image: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    discount: 31,
+                    tag: "today"
+                },
+                {
+                    id: 106,
+                    name: "Action Camera 4K",
+                    category: "cameras",
+                    price: 199.99,
+                    oldPrice: 299.99,
+                    rating: 4.5,
+                    reviews: 56,
+                    description: "4K action camera with waterproof case",
+                    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    discount: 33,
+                    tag: "weekend"
+                },
+                {
+                    id: 107,
+                    name: "Smart Home Hub",
+                    category: "smart-home",
+                    price: 69.99,
+                    oldPrice: 99.99,
+                    rating: 4.2,
+                    reviews: 45,
+                    description: "Central hub for all your smart home devices",
+                    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    discount: 30,
+                    tag: "hot"
+                },
+                {
+                    id: 108,
+                    name: "External SSD 1TB",
+                    category: "accessories",
+                    price: 119.99,
+                    oldPrice: 169.99,
+                    rating: 4.8,
+                    reviews: 124,
+                    description: "High-speed external SSD for backups and storage",
+                    image: "https://images.unsplash.com/photo-1599084993091-1cb5c0721cc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                    discount: 29,
+                    tag: "today"
+                }
+            ];
+            
+            const container = document.getElementById('deals-products');
+            if (!container) return;
+            
+            container.innerHTML = dealsProducts.map(product => `
+                <div class="product-card" data-tag="${product.tag}">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        <span class="product-badge" style="background-color: #ef4444;">-${product.discount}%</span>
+                        ${product.tag === 'hot' ? '<span class="product-badge" style="background-color: #f59e0b; left: auto; right: 15px;">HOT</span>' : ''}
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">
+                            <a href="product-detail.html?id=${product.id}">${product.name}</a>
+                        </h3>
+                        <div class="product-price">
+                            $${product.price.toFixed(2)}
+                            <span class="old-price">$${product.oldPrice.toFixed(2)}</span>
+                        </div>
+                        <div class="product-rating">
+                            <span class="stars">${renderStars(product.rating)}</span>
+                            <span class="rating-count">(${product.reviews})</span>
+                        </div>
+                        <p class="product-description">${product.description}</p>
+                        <div class="product-actions">
+                            <button class="btn-add-to-cart" onclick="addToCartDeals(${product.id})">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Render stars
+        function renderStars(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 >= 0.5;
+            
+            for (let i = 0; i < 5; i++) {
+                if (i < fullStars) {
+                    stars += '<i class="fas fa-star"></i>';
+                } else if (i === fullStars && halfStar) {
+                    stars += '<i class="fas fa-star-half-alt"></i>';
+                } else {
+                    stars += '<i class="far fa-star"></i>';
+                }
+            }
+            
+            return stars;
+        }
+        
+        // Load daily deals
+        function loadDailyDeals() {
+            const mondayDeals = [
+                {
+                    id: 201,
+                    name: "USB-C Hub 7-in-1",
+                    price: 34.99,
+                    oldPrice: 49.99,
+                    image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                },
+                {
+                    id: 202,
+                    name: "Wireless Charging Pad",
+                    price: 24.99,
+                    oldPrice: 39.99,
+                    image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                },
+                {
+                    id: 203,
+                    name: "Phone Case Collection",
+                    price: 19.99,
+                    oldPrice: 29.99,
+                    image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                }
+            ];
+            
+            const tuesdayDeals = [
+                {
+                    id: 204,
+                    name: "Laptop Stand Aluminum",
+                    price: 29.99,
+                    oldPrice: 44.99,
+                    image: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                },
+                {
+                    id: 205,
+                    name: "Webcam 1080p",
+                    price: 49.99,
+                    oldPrice: 69.99,
+                    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                },
+                {
+                    id: 206,
+                    name: "Desk Lamp LED",
+                    price: 39.99,
+                    oldPrice: 59.99,
+                    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                }
+            ];
+            
+            // Monday deals
+            const mondayContainer = document.querySelector('#monday-deals .daily-deals-grid');
+            if (mondayContainer) {
+                mondayContainer.innerHTML = mondayDeals.map(product => `
+                    <div class="daily-deal-card">
+                        <div class="daily-deal-image">
+                            <img src="${product.image}" alt="${product.name}">
+                            <div class="daily-discount">-${Math.round((1 - product.price / product.oldPrice) * 100)}%</div>
+                        </div>
+                        <div class="daily-deal-info">
+                            <h4>${product.name}</h4>
+                            <div class="daily-price">
+                                <span class="current">$${product.price.toFixed(2)}</span>
+                                <span class="original">$${product.oldPrice.toFixed(2)}</span>
+                            </div>
+                            <button class="btn btn-primary" onclick="addToCartDeals(${product.id})">Add to Cart</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            // Tuesday deals
+            const tuesdayContainer = document.querySelector('#tuesday-deals .daily-deals-grid');
+            if (tuesdayContainer) {
+                tuesdayContainer.innerHTML = tuesdayDeals.map(product => `
+                    <div class="daily-deal-card">
+                        <div class="daily-deal-image">
+                            <img src="${product.image}" alt="${product.name}">
+                            <div class="daily-discount">-${Math.round((1 - product.price / product.oldPrice) * 100)}%</div>
+                        </div>
+                        <div class="daily-deal-info">
+                            <h4>${product.name}</h4>
+                            <div class="daily-price">
+                                <span class="current">$${product.price.toFixed(2)}</span>
+                                <span class="original">$${product.oldPrice.toFixed(2)}</span>
+                            </div>
+                            <button class="btn btn-primary" onclick="addToCartDeals(${product.id})">Add to Cart</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+        
+        // Setup event listeners
+        function setupDealsEventListeners() {
+            // Deal filter buttons
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Filter products
+                    const filter = this.dataset.filter;
+                    filterDealsProducts(filter);
+                });
+            });
+            
+            // Daily deals tabs
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const day = this.dataset.day;
+                    
+                    // Remove active class from all buttons and contents
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    document.getElementById(`${day}-deals`).classList.add('active');
+                });
+            });
+            
+            // Buy now buttons for flash sale
+            const buyNowButtons = document.querySelectorAll('.flash-product-card .btn-primary');
+            buyNowButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productCard = this.closest('.flash-product-card');
+                    const productName = productCard.querySelector('h3').textContent;
+                    const price = productCard.querySelector('.current-price').textContent;
+                    
+                    // Simulate adding to cart
+                    alert(`Added ${productName} to cart for ${price}`);
+                });
+            });
+        }
+        
+        // Filter deals products
+        function filterDealsProducts(filter) {
+            const productCards = document.querySelectorAll('#deals-products .product-card');
+            
+            productCards.forEach(card => {
+                if (filter === 'all' || card.dataset.tag === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+        
+        // Add to cart from deals page
+        function addToCartDeals(productId) {
+            // In a real app, you would fetch product data
+            const product = {
+                id: productId,
+                name: `Deal Product ${productId}`,
+                price: 99.99,
+                image: "https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+            };
+            
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            
+            alert(`Added ${product.name} to cart!`);
+        }
+    </script>
+    
+    <style>
+        /* Deals Page Specific Styles */
+        .deals-page {
+            background-color: #f9fafb;
+        }
+        
+        .deals-hero {
+            background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .deals-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .deals-hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+        
+        .deals-hero-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .deals-hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .deals-hero-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .countdown-timer {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .countdown-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius);
+            padding: 1rem;
+            min-width: 80px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .countdown-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1;
+        }
+        
+        .countdown-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .featured-deals {
+            padding: 4rem 0;
+        }
+        
+        .deal-filters {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            padding: 8px 16px;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .flash-sale {
+            background-color: white;
+            padding: 3rem 0;
+            margin: 2rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .flash-sale-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .flash-sale-header h2 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .flash-timer {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background-color: var(--bg-light);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+        }
+        
+        .flash-countdown {
+            background-color: var(--danger-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        .flash-products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .flash-product-card {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .flash-badge {
+            position: absolute;
+            top: 15px;
+            left: 0;
+            background-color: var(--danger-color);
+            color: white;
+            padding: 5px 15px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 0 20px 20px 0;
+            z-index: 2;
+        }
+        
+        .flash-product-image {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .flash-product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .discount-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .flash-product-info {
+            padding: 1.5rem;
+        }
+        
+        .flash-product-info h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .flash-price {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .current-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .original-price {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+        
+        .stock-progress {
+            margin: 1.5rem 0;
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background-color: var(--bg-light);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 0.5rem;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            border-radius: 4px;
+        }
+        
+        .stock-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            text-align: right;
+        }
+        
+        .daily-deals {
+            padding: 4rem 0;
+        }
+        
+        .tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+        }
+        
+        .tab-btn {
+            padding: 10px 20px;
+            background-color: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+        
+        .tab-btn:hover,
+        .tab-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .daily-deals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .daily-deal-card {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .daily-deal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .daily-deal-image {
+            height: 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .daily-deal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .daily-discount {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--danger-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        
+        .daily-deal-info {
+            padding: 1.5rem;
+        }
+        
+        .daily-deal-info h4 {
+            margin-bottom: 0.5rem;
+        }
+        
+        .daily-price {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .daily-price .current {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .daily-price .original {
+            font-size: 1rem;
+            color: var(--text-light);
+            text-decoration: line-through;
+        }
+        
+        .deal-newsletter {
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .newsletter-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .newsletter-content h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .newsletter-content p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+        }
+        
+        .deal-newsletter-form {
+            display: flex;
+            gap: 0.5rem;
+            max-width: 500px;
+            margin: 0 auto 1rem;
+        }
+        
+        .deal-newsletter-form input {
+            flex: 1;
+            padding: 12px 15px;
+            border-radius: var(--radius);
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+        
+        .newsletter-note {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .deals-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .deals-hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .deals-hero-text h2 {
+                font-size: 1.5rem;
+            }
+            
+            .countdown-timer {
+                justify-content: center;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+            }
+            
+            .flash-sale-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .deal-newsletter-form {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .countdown-timer {
+                gap: 0.5rem;
+            }
+            
+            .countdown-item {
+                min-width: 60px;
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+            
+            .flash-products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

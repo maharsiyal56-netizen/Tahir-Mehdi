@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | TechStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><i class="fas fa-bolt"></i> <span>Tech</span>Store</a>
+                </div>
+                
+                <nav class="navbar">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="deals.html">Deals</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html" class="active">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="#" class="icon-link"><i class="far fa-user"></i></a>
+                        <a href="cart.html" class="icon-link cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contact Page Content -->
+    <main class="contact-page">
+        <!-- Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <div class="contact-hero-content">
+                    <h1>Get in Touch</h1>
+                    <p>We're here to help! Reach out to us with any questions or concerns.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Info -->
+        <section class="contact-info">
+            <div class="container">
+                <div class="contact-info-grid">
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p>+1 (800) TECH-HELP</p>
+                        <p class="contact-hours">Mon-Fri: 8AM-8PM EST<br>Sat-Sun: 9AM-6PM EST</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p>support@techstore.com</p>
+                        <p>sales@techstore.com</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Us</h3>
+                        <p>123 Tech Street<br>San Francisco, CA 94107</p>
+                        <p class="contact-hours">Showroom: Mon-Sat 10AM-7PM</p>
+                    </div>
+                    
+                    <div class="contact-info-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3>Live Chat</h3>
+                        <p>Available 24/7</p>
+                        <button class="btn btn-secondary start-chat">Start Chat</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Form & Map -->
+        <section class="contact-form-section">
+            <div class="container">
+                <div class="contact-container">
+                    <!-- Contact Form -->
+                    <div class="contact-form-container">
+                        <h2>Send us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+                        
+                        <form id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name">Full Name *</label>
+                                    <input type="text" id="contact-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Email Address *</label>
+                                    <input type="email" id="contact-email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-subject">Subject *</label>
+                                <input type="text" id="contact-subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-department">Department *</label>
+                                <select id="contact-department" required>
+                                    <option value="">Select Department</option>
+                                    <option value="support">Customer Support</option>
+                                    <option value="sales">Sales Inquiry</option>
+                                    <option value="billing">Billing & Payments</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="returns">Returns & Exchanges</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-order">Order Number (Optional)</label>
+                                <input type="text" id="contact-order">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="contact-message">Message *</label>
+                                <textarea id="contact-message" rows="6" required></textarea>
+                            </div>
+                            
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="contact-newsletter">
+                                    <span class="checkmark"></span>
+                                    Sign up for our newsletter to receive updates and exclusive offers
+                                </label>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Map & FAQ -->
+                    <div class="contact-sidebar">
+                        <!-- Map -->
+                        <div class="map-container">
+                            <h3>Our Location</h3>
+                            <div class="map-placeholder">
+                                <div class="map-image">
+                                    <img src="https://maps.googleapis.com/maps/api/staticmap?center=San+Francisco,CA&zoom=13&size=600x300&scale=2&markers=color:red%7Clabel:T%7C37.7749,-122.4194&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8" alt="TechStore Location">
+                                </div>
+                                <div class="map-info">
+                                    <p><i class="fas fa-map-marker-alt"></i> 123 Tech Street, San Francisco, CA 94107</p>
+                                    <p><i class="fas fa-directions"></i> <a href="#" id="get-directions">Get Directions</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- FAQ -->
+                        <div class="faq-container">
+                            <h3>Frequently Asked Questions</h3>
+                            <div class="faq-accordion">
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        What is your return policy?
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p>We offer a 30-day return policy for most items. Products must be in original condition with all accessories and packaging. Some items like software and personalized products may have different return policies.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        How long does shipping take?
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p>Standard shipping takes 5-7 business days. Express shipping (2-3 business days) and overnight shipping are also available. Free shipping is offered on orders over $500.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        Do you ship internationally?
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p>Yes, we ship to over 50 countries worldwide. International shipping times vary by destination. Additional customs fees and taxes may apply depending on your country's regulations.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="faq-item">
+                                    <button class="faq-question">
+                                        How can I track my order?
+                                        <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    <div class="faq-answer">
+                                        <p>Once your order ships, you'll receive a tracking number via email. You can also track your order by logging into your account on our website.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Social Media -->
+        <section class="social-contact">
+            <div class="container">
+                <h2 class="section-title">Connect With Us</h2>
+                <div class="social-grid">
+                    <a href="#" class="social-card facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <h3>Facebook</h3>
+                        <p>Follow us for updates and community</p>
+                        <span>@TechStoreOfficial</span>
+                    </a>
+                    
+                    <a href="#" class="social-card twitter">
+                        <i class="fab fa-twitter"></i>
+                        <h3>Twitter</h3>
+                        <p>Latest news and announcements</p>
+                        <span>@TechStore</span>
+                    </a>
+                    
+                    <a href="#" class="social-card instagram">
+                        <i class="fab fa-instagram"></i>
+                        <h3>Instagram</h3>
+                        <p>Product photos and behind the scenes</p>
+                        <span>@TechStore</span>
+                    </a>
+                    
+                    <a href="#" class="social-card youtube">
+                        <i class="fab fa-youtube"></i>
+                        <h3>YouTube</h3>
+                        <p>Product reviews and tutorials</p>
+                        <span>TechStoreTV</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <a href="index.html"><i class="fas fa-bolt"></i> <span>Tech</span>Store</a>
+                    </div>
+                    <p>Your destination for the latest electronics and gadgets. Quality products with exceptional customer service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="categories.html">Categories</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new arrivals & special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 TechStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chat Widget (Demo) -->
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-header">
+            <h4><i class="fas fa-comments"></i> Live Chat</h4>
+            <button class="chat-close">&times;</button>
+        </div>
+        <div class="chat-body">
+            <div class="chat-messages">
+                <div class="chat-message bot">
+                    <p>Hello! How can I help you today?</p>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Chat Button -->
+    <button class="chat-button" id="chat-button">
+        <i class="fas fa-comment"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script>
+        // Contact Page Script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize cart count
+            updateCartCount();
+            
+            // Initialize FAQ accordion
+            initFAQAccordion();
+            
+            // Initialize chat widget
+            initChatWidget();
+            
+            // Setup contact form
+            setupContactForm();
+            
+            // Mobile menu toggle
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+            
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    alert(`Thank you for subscribing with ${email}!`);
+                    this.reset();
+                });
+            }
+            
+            // Get directions link
+            const getDirectionsLink = document.getElementById('get-directions');
+            if (getDirectionsLink) {
+                getDirectionsLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    alert('Opening Google Maps with directions to TechStore...');
+                    // In a real app, this would open Google Maps
+                    // window.open('https://maps.google.com/?q=123+Tech+Street+San+Francisco+CA+94107');
+                });
+            }
+        });
+        
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            const cartCountElements = document.querySelectorAll('.cart-count');
+            
+            cartCountElements.forEach(element => {
+                element.textContent = cartCount;
+            });
+        }
+        
+        // Initialize FAQ accordion
+        function initFAQAccordion() {
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Toggle active class on question
+                    this.classList.toggle('active');
+                    
+                    // Get the answer element
+                    const answer = this.nextElementSibling;
+                    
+                    // Toggle answer visibility
+                    if (answer.style.maxHeight) {
+                        answer.style.maxHeight = null;
+                    } else {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                    
+                    // Rotate chevron icon
+                    const icon = this.querySelector('i');
+                    icon.classList.toggle('fa-chevron-up');
+                    icon.classList.toggle('fa-chevron-down');
+                });
+            });
+            
+            // Open first FAQ by default
+            if (faqQuestions.length > 0) {
+                faqQuestions[0].click();
+            }
+        }
+        
+        // Initialize chat widget
+        function initChatWidget() {
+            const chatButton = document.getElementById('chat-button');
+            const chatWidget = document.getElementById('chat-widget');
+            const chatClose = document.querySelector('.chat-close');
+            const startChatButtons = document.querySelectorAll('.start-chat');
+            
+            // Chat button click
+            if (chatButton) {
+                chatButton.addEventListener('click', function() {
+                    chatWidget.classList.toggle('open');
+                    this.classList.toggle('active');
+                });
+            }
+            
+            // Chat close button
+            if (chatClose) {
+                chatClose.addEventListener('click', function() {
+                    chatWidget.classList.remove('open');
+                    chatButton.classList.remove('active');
+                });
+            }
+            
+            // Start chat buttons
+            startChatButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    chatWidget.classList.add('open');
+                    chatButton.classList.add('active');
+                });
+            });
+            
+            // Chat input
+            const chatInput = document.querySelector('.chat-input input');
+            const chatSend = document.querySelector('.chat-input button');
+            const chatMessages = document.querySelector('.chat-messages');
+            
+            if (chatSend && chatInput) {
+                chatSend.addEventListener('click', sendChatMessage);
+                chatInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        sendChatMessage();
+                    }
+                });
+            }
+            
+            function sendChatMessage() {
+                const message = chatInput.value.trim();
+                if (!message) return;
+                
+                // Add user message
+                const userMessage = document.createElement('div');
+                userMessage.className = 'chat-message user';
+                userMessage.innerHTML = `<p>${message}</p>`;
+                chatMessages.appendChild(userMessage);
+                
+                // Clear input
+                chatInput.value = '';
+                
+                // Scroll to bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                
+                // Simulate bot response after delay
+                setTimeout(() => {
+                    const responses = [
+                        "Thanks for your message! How else can I help you?",
+                        "I understand. Is there anything specific you'd like to know?",
+                        "Our customer support team will review your inquiry and get back to you shortly.",
+                        "You can also email us at support@techstore.com for assistance.",
+                        "Is there a particular product you're interested in?"
+                    ];
+                    
+                    const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                    
+                    const botMessage = document.createElement('div');
+                    botMessage.className = 'chat-message bot';
+                    botMessage.innerHTML = `<p>${randomResponse}</p>`;
+                    chatMessages.appendChild(botMessage);
+                    
+                    // Scroll to bottom
+                    chatMessages.scrollTop = chatMessages.scrollHeight;
+                }, 1000);
+            }
+        }
+        
+        // Setup contact form
+        function setupContactForm() {
+            const contactForm = document.getElementById('contact-form');
+            if (!contactForm) return;
+            
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const name = document.getElementById('contact-name').value;
+                const email = document.getElementById('contact-email').value;
+                const subject = document.getElementById('contact-subject').value;
+                const department = document.getElementById('contact-department').value;
+                const message = document.getElementById('contact-message').value;
+                
+                // Simple validation
+                if (!name || !email || !subject || !department || !message) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                // Validate email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email)) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+                
+                // Show success message
+                alert(`Thank you, ${name}! Your message has been sent. We'll get back to you at ${email} within 24 hours.`);
+                
+                // Reset form
+                contactForm.reset();
+            });
+        }
+    </script>
+    
+    <style>
+        /* Contact Page Specific Styles */
+        .contact-page {
+            background-color: #f9fafb;
+        }
+        
+        .contact-hero {
+            background: linear-gradient(rgba(37, 99, 235, 0.9), rgba(124, 58, 237, 0.9)), 
+                        url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .contact-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .contact-hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            padding: 4rem 0;
+        }
+        
+        .contact-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info-card {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .contact-info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .contact-info-card h3 {
+            margin-bottom: 1rem;
+            color: var(--bg-dark);
+        }
+        
+        .contact-info-card p {
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-hours {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 1rem;
+        }
+        
+        .contact-info-card .btn {
+            margin-top: 1rem;
+        }
+        
+        .contact-form-section {
+            padding: 4rem 0;
+            background-color: white;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+        
+        .contact-form-container h2 {
+            margin-bottom: 0.5rem;
+            color: var(--bg-dark);
+        }
+        
+        .contact-form-container p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-form-container form {
+            background-color: var(--bg-light);
+            padding: 2rem;
+            border-radius: var(--radius);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .checkbox-label input {
+            display: none;
+        }
+        
+        .checkbox-label .checkmark {
+            min-width: 18px;
+            height: 18px;
+            border: 2px solid var(--border-color);
+            border-radius: 4px;
+            margin-right: 10px;
+            position: relative;
+            margin-top: 0.25rem;
+        }
+        
+        .checkbox-label input:checked + .checkmark {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .checkbox-label input:checked + .checkmark::after {
+            content: '✓';
+            position: absolute;
+            color: white;
+            font-size: 12px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .contact-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .map-container {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .map-container h3 {
+            padding: 1.5rem 1.5rem 0;
+            margin-bottom: 1rem;
+            color: var(--bg-dark);
+        }
+        
+        .map-placeholder {
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .map-image {
+            height: 200px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+        
+        .map-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .map-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .map-info p {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .map-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .map-info a:hover {
+            text-decoration: underline;
+        }
+        
+        .faq-container {
+            background-color: white;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-container h3 {
+            padding: 1.5rem 1.5rem 0;
+            margin-bottom: 1rem;
+            color: var(--bg-dark);
+        }
+        
+        .faq-accordion {
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1rem 0;
+            background: none;
+            border: none;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 500;
+            color: var(--text-color);
+            transition: var(--transition);
+        }
+        
+        .faq-question:hover {
+            color: var(--primary-color);
+        }
+        
+        .faq-question i {
+            transition: var(--transition);
+        }
+        
+        .faq-question.active i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-answer p {
+            padding-bottom: 1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        
+        .social-contact {
+            padding: 4rem 0;
+            background-color: #f9fafb;
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .social-card {
+            background-color: white;
+            border-radius: var(--radius);
+            padding: 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: var(--text-color);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+        
+        .social-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .social-card.facebook {
+            border-top-color: #1877f2;
+        }
+        
+        .social-card.twitter {
+            border-top-color: #1da1f2;
+        }
+        
+        .social-card.instagram {
+            border-top-color: #e4405f;
+        }
+        
+        .social-card.youtube {
+            border-top-color: #ff0000;
+        }
+        
+        .social-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .social-card.facebook i {
+            color: #1877f2;
+        }
+        
+        .social-card.twitter i {
+            color: #1da1f2;
+        }
+        
+        .social-card.instagram i {
+            color: #e4405f;
+        }
+        
+        .social-card.youtube i {
+            color: #ff0000;
+        }
+        
+        .social-card h3 {
+            margin-bottom: 0.5rem;
+            color: var(--bg-dark);
+        }
+        
+        .social-card p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .social-card span {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        
+        /* Chat Widget */
+        .chat-widget {
+            position: fixed;
+            bottom: 100px;
+            right: 30px;
+            width: 350px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        
+        .chat-widget.open {
+            display: flex;
+        }
+        
+        .chat-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .chat-header h4 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .chat-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+        
+        .chat-body {
+            display: flex;
+            flex-direction: column;
+            height: 400px;
+        }
+        
+        .chat-messages {
+            flex: 1;
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .chat-message {
+            max-width: 80%;
+            padding: 0.75rem 1rem;
+            border-radius: 18px;
+            line-height: 1.4;
+        }
+        
+        .chat-message.bot {
+            align-self: flex-start;
+            background-color: var(--bg-light);
+            color: var(--text-color);
+        }
+        
+        .chat-message.user {
+            align-self: flex-end;
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .chat-input {
+            display: flex;
+            padding: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+        
+        .chat-input input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            outline: none;
+        }
+        
+        .chat-input button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-left: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .chat-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+            transition: var(--transition);
+        }
+        
+        .chat-button:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+        
+        .chat-button.active {
+            background-color: var(--danger-color);
+        }
+        
+        @media (max-width: 1024px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .contact-hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .chat-widget {
+                width: 300px;
+                right: 20px;
+                bottom: 90px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-info-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .chat-widget {
+                width: calc(100% - 40px);
+                right: 20px;
+                left: 20px;
+            }
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | TechStore</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="index.html"><i class="fas fa-bolt"></i> <span>Tech</span>Store</a>
+                </div>
+                
+                <nav class="navbar">
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Deals</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products...">
+                        <button><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="user-actions">
+                        <a href="#" class="icon-link"><i class="far fa-user"></i></a>
+                        <a href="cart.html" class="icon-link cart-icon">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Page Content -->
+    <main class="cart-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Shopping Cart</h1>
+                <p>Review your items and proceed to checkout</p>
+            </div>
+            
+            <div class="cart-container">
+                <!-- Cart Items Section -->
+                <section class="cart-items">
+                    <!-- Cart items will be loaded via JavaScript -->
+                </section>
+                
+                <!-- Order Summary Section -->
+                <aside class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Tax (8%)</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span id="shipping">$0.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                    <div class="cart-actions">
+                        <a href="checkout.html" class="btn btn-primary" id="checkout-btn">Proceed to Checkout</a>
+                        <a href="products.html" class="btn btn-secondary">Continue Shopping</a>
+                    </div>
+                    
+                    <div class="shipping-info">
+                        <h4><i class="fas fa-shipping-fast"></i> Free Shipping</h4>
+                        <p>Free standard shipping on orders over $500</p>
+                    </div>
+                    
+                    <div class="security-info">
+                        <h4><i class="fas fa-shield-alt"></i> Secure Shopping</h4>
+                        <p>Your payment information is protected with 256-bit SSL encryption</p>
+                    </div>
+                </aside>
+            </div>
+            
+            <!-- Recently Viewed Products -->
+            <section class="related-products">
+                <div class="section-header">
+                    <h2 class="section-title">Recently Viewed</h2>
+                    <a href="products.html" class="view-all">View All <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="products-grid" id="recent-products">
+                    <!-- Recently viewed products will be loaded via JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo">
+                        <a href="index.html"><i class="fas fa-bolt"></i> <span>Tech</span>Store</a>
+                    </div>
+                    <p>Your destination for the latest electronics and gadgets. Quality products with exceptional customer service.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Shipping Policy</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to get updates on new arrivals & special offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 TechStore. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Cart Page Specific Functions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render cart items
+            renderCartItems();
+            
+            // Update cart count
+            updateCartCount();
+            
+            // Render recently viewed products
+            renderRecentlyViewed();
+            
+            // Setup event listeners for quantity changes
+            setupCartEventListeners();
+            
+            // Mobile menu toggle
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            if (hamburger && navMenu) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-menu a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+            
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    alert(`Thank you for subscribing with ${email}!`);
+                    this.reset();
+                });
+            }
+        });
+        
+        // Render cart items
+        function renderCartItems() {
+            const cartItemsContainer = document.querySelector('.cart-items');
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h2>Your cart is empty</h2>
+                        <p>Add some products to your cart to continue shopping</p>
+                        <a href="products.html" class="btn btn-primary" style="margin-top: 1rem;">Continue Shopping</a>
+                    </div>
+                `;
+                
+                // Disable checkout button
+                const checkoutBtn = document.getElementById('checkout-btn');
+                if (checkoutBtn) {
+                    checkoutBtn.classList.add('disabled');
+                    checkoutBtn.style.pointerEvents = 'none';
+                    checkoutBtn.style.opacity = '0.6';
+                }
+                
+                updateOrderSummary(0, 0, 0, 0);
+                return;
+            }
+            
+            let cartHTML = `
+                <div class="cart-header">
+                    <div>Product</div>
+                    <div>Price</div>
+                    <div>Quantity</div>
+                    <div>Total</div>
+                    <div></div>
+                </div>
+            `;
+            
+            let subtotal = 0;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                subtotal += itemTotal;
+                
+                cartHTML += `
+                    <div class="cart-item" data-id="${item.id}">
+                        <div class="cart-product">
+                            <div class="cart-product-image">
+                                <img src="${item.image}" alt="${item.name}">
+                            </div>
+                            <div class="cart-product-info">
+                                <h4>${item.name}</h4>
+                                <p>${formatPrice(item.price)}</p>
+                            </div>
+                        </div>
+                        <div class="cart-price">${formatPrice(item.price)}</div>
+                        <div class="cart-quantity">
+                            <button class="quantity-minus" onclick="updateCartItemQuantity(${item.id}, -1)">-</button>
+                            <input type="text" class="quantity-input" value="${item.quantity}" data-id="${item.id}">
+                            <button class="quantity-plus" onclick="updateCartItemQuantity(${item.id}, 1)">+</button>
+                        </div>
+                        <div class="cart-price item-total">${formatPrice(itemTotal)}</div>
+                        <div>
+                            <button class="cart-remove" onclick="removeCartItem(${item.id})">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItemsContainer.innerHTML = cartHTML;
+            
+            // Calculate order summary
+            const tax = subtotal * 0.08;
+            const shipping = subtotal > 0 ? (subtotal > 500 ? 0 : 15) : 0;
+            const total = subtotal + tax + shipping;
+            
+            updateOrderSummary(subtotal, tax, shipping, total);
+            
+            // Enable checkout button
+            const checkoutBtn = document.getElementById('checkout-btn');
+            if (checkoutBtn) {
+                checkoutBtn.classList.remove('disabled');
+                checkoutBtn.style.pointerEvents = 'auto';
+                checkoutBtn.style.opacity = '1';
+            }
+        }
+        
+        // Format price
+        function formatPrice(price) {
+            return `$${price.toFixed(2)}`;
+        }
+        
+        // Update order summary
+        function updateOrderSummary(subtotal, tax, shipping, total) {
+            document.getElementById('subtotal').textContent = formatPrice(subtotal);
+            document.getElementById('tax').textContent = formatPrice(tax);
+            document.getElementById('shipping').textContent = formatPrice(shipping);
+            document.getElementById('total').textContent = formatPrice(total);
+        }
+        
+        // Update cart item quantity
+        function updateCartItemQuantity(productId, change) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const itemIndex = cart.findIndex(item => item.id === productId);
+            
+            if (itemIndex !== -1) {
+                cart[itemIndex].quantity += change;
+                
+                // Remove item if quantity becomes 0 or less
+                if (cart[itemIndex].quantity <= 0) {
+                    cart.splice(itemIndex, 1);
+                }
+                
+                // Save to localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
+                
+                // Re-render cart
+                renderCartItems();
+                updateCartCount();
+            }
+        }
+        
+        // Remove cart item
+        function removeCartItem(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.id !== productId);
+            
+            // Save to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Re-render cart
+            renderCartItems();
+            updateCartCount();
+        }
+        
+        // Update cart count
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            const cartCountElements = document.querySelectorAll('.cart-count');
+            
+            cartCountElements.forEach(element => {
+                element.textContent = cartCount;
+            });
+        }
+        
+        // Setup cart event listeners
+        function setupCartEventListeners() {
+            // Quantity input changes
+            document.addEventListener('change', function(e) {
+                if (e.target.classList.contains('quantity-input')) {
+                    const productId = parseInt(e.target.dataset.id);
+                    const newQuantity = parseInt(e.target.value);
+                    
+                    if (isNaN(newQuantity) || newQuantity < 1) {
+                        e.target.value = 1;
+                        updateCartItemQuantity(productId, 0); // Force update
+                        return;
+                    }
+                    
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    const itemIndex = cart.findIndex(item => item.id === productId);
+                    
+                    if (itemIndex !== -1) {
+                        cart[itemIndex].quantity = newQuantity;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        renderCartItems();
+                        updateCartCount();
+                    }
+                }
+            });
+            
+            // Quantity input focus
+            document.addEventListener('focus', function(e) {
+                if (e.target.classList.contains('quantity-input')) {
+                    e.target.select();
+                }
+            }, true);
+        }
+        
+        // Render recently viewed products
+        function renderRecentlyViewed() {
+            const recentProductsContainer = document.getElementById('recent-products');
+            if (!recentProductsContainer) return;
+            
+            // Get recently viewed from localStorage or use some featured products
+            const recentlyViewed = JSON.parse(localStorage.getItem('recentlyViewed')) || [];
+            
+            let productsToShow = [];
+            
+            if (recentlyViewed.length > 0) {
+                // Get product details for recently viewed IDs
+                const allProducts = [
+                    {
+                        id: 1,
+                        name: "iPhone 14 Pro",
+                        category: "smartphones",
+                        price: 999,
+                        oldPrice: 1099,
+                        rating: 4.7,
+                        reviews: 125,
+                        description: "Latest iPhone with Dynamic Island, A16 Bionic chip, and professional camera system.",
+                        image: "https://images.unsplash.com/photo-1663499482523-1c0c1eae708d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        stock: 15,
+                        featured: true
+                    },
+                    {
+                        id: 2,
+                        name: "MacBook Pro 16\"",
+                        category: "laptops",
+                        price: 2399,
+                        oldPrice: 2599,
+                        rating: 4.8,
+                        reviews: 89,
+                        description: "Powerful laptop with M2 Pro chip, Liquid Retina XDR display, and up to 22 hours battery life.",
+                        image: "https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        stock: 8,
+                        featured: true
+                    },
+                    {
+                        id: 3,
+                        name: "Sony WH-1000XM5",
+                        category: "audio",
+                        price: 399,
+                        oldPrice: 449,
+                        rating: 4.6,
+                        reviews: 210,
+                        description: "Industry-leading noise cancellation headphones with 30-hour battery life.",
+                        image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        stock: 25,
+                        featured: true
+                    },
+                    {
+                        id: 10,
+                        name: "PlayStation 5",
+                        category: "gaming",
+                        price: 499,
+                        oldPrice: 549,
+                        rating: 4.8,
+                        reviews: 210,
+                        description: "Next-gen gaming console with ultra-high speed SSD and immersive 3D audio.",
+                        image: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        stock: 5,
+                        featured: true
+                    }
+                ];
+                
+                // Filter products that are in recentlyViewed
+                productsToShow = allProducts.filter(product => 
+                    recentlyViewed.includes(product.id)
+                ).slice(0, 4);
+            }
+            
+            // If no recently viewed, show some featured products
+            if (productsToShow.length === 0) {
+                productsToShow = [
+                    {
+                        id: 1,
+                        name: "iPhone 14 Pro",
+                        category: "smartphones",
+                        price: 999,
+                        oldPrice: 1099,
+                        rating: 4.7,
+                        reviews: 125,
+                        description: "Latest iPhone with Dynamic Island, A16 Bionic chip, and professional camera system.",
+                        image: "https://images.unsplash.com/photo-1663499482523-1c0c1eae708d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        stock: 15,
+                        featured: true
+                    },
+                    {
+                        id: 6,
+                        name: "Apple Watch Series 8",
+                        category: "wearables",
+                        price: 399,
+                        oldPrice: 429,
+                        rating: 4.3,
+                        reviews: 142,
+                        description: "Advanced health monitoring, crash detection, and always-on Retina display.",
+                        image: "https://images.unsplash.com/photo-1434493650001-7d3d8af8e4d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        stock: 30,
+                        featured: true
+                    },
+                    {
+                        id: 8,
+                        name: "Google Nest Hub",
+                        category: "smart-home",
+                        price: 89,
+                        oldPrice: 99,
+                        rating: 4.2,
+                        reviews: 56,
+                        description: "Smart display with Google Assistant, sleep sensing, and home automation control.",
+                        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        stock: 45,
+                        featured: true
+                    },
+                    {
+                        id: 12,
+                        name: "Logitech MX Master 3S",
+                        category: "accessories",
+                        price: 99,
+                        oldPrice: 129,
+                        rating: 4.5,
+                        reviews: 124,
+                        description: "Advanced wireless mouse with ultra-fast scrolling, silent clicks, and multi-device flow.",
+                        image: "https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+                        stock: 35,
+                        featured: false
+                    }
+                ];
+            }
+            
+            // Render product cards
+            recentProductsContainer.innerHTML = productsToShow.map(product => `
+                <div class="product-card" data-category="${product.category}">
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}">
+                        ${product.oldPrice && product.oldPrice > product.price ? '<span class="product-badge">Sale</span>' : ''}
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">
+                            <a href="product-detail.html?id=${product.id}">${product.name}</a>
+                        </h3>
+                        <div class="product-price">
+                            ${formatPrice(product.price)}
+                            ${product.oldPrice && product.oldPrice > product.price ? `<span class="old-price">${formatPrice(product.oldPrice)}</span>` : ''}
+                        </div>
+                        <div class="product-rating">
+                            <span class="stars">${renderStars(product.rating)}</span>
+                            <span class="rating-count">(${product.reviews})</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-add-to-cart" onclick="addToCartFromRecent(${product.id})">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Render stars for rating
+        function renderStars(rating) {
+            let stars = '';
+            const fullStars = Math.floor(rating);
+            const halfStar = rating % 1 >= 0.5;
+            
+            for (let i = 0; i < 5; i++) {
+                if (i < fullStars) {
+                    stars += '<i class="fas fa-star"></i>';
+                } else if (i === fullStars && halfStar) {
+                    stars += '<i class="fas fa-star-half-alt"></i>';
+                } else {
+                    stars += '<i class="far fa-star"></i>';
+                }
+            }
+            
+            return stars;
+        }
+        
+        // Add to cart from recently viewed
+        function addToCartFromRecent(productId) {
+            // Get product data (in a real app, you'd fetch from your products array)
+            const allProducts = [
+                {
+                    id: 1,
+                    name: "iPhone 14 Pro",
+                    price: 999,
+                    image: "https://images.unsplash.com/photo-1663499482523-1c0c1eae708d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                },
+                {
+                    id: 2,
+                    name: "MacBook Pro 16\"",
+                    price: 2399,
+                    image: "https://images.unsplash.com/photo-1511385348-a52b4a160dc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                },
+                {
+                    id: 3,
+                    name: "Sony WH-1000XM5",
+                    price: 399,
+                    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                },
+                {
+                    id: 6,
+                    name: "Apple Watch Series 8",
+                    price: 399,
+                    image: "https://images.unsplash.com/photo-1434493650001-7d3d8af8e4d6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                },
+                {
+                    id: 8,
+                    name: "Google Nest Hub",
+                    price: 89,
+                    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                },
+                {
+                    id: 10,
+                    name: "PlayStation 5",
+                    price: 499,
+                    image: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                },
+                {
+                    id: 12,
+                    name: "Logitech MX Master 3S",
+                    price: 99,
+                    image: "https://images.unsplash.com/photo-1527814050087-3793815479db?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                }
+            ];
+            
+            const product = allProducts.find(p => p.id === productId);
+            if (!product) return;
+            
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    image: product.image,
+                    quantity: 1
+                });
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Update cart display
+            renderCartItems();
+            updateCartCount();
+            
+            // Show success message
+            alert(`${product.name} added to cart!`);
+        }
+        
+        // Clear cart (optional function, not called by default)
+        function clearCart() {
+            if (confirm('Are you sure you want to clear your cart?')) {
+                localStorage.removeItem('cart');
+                renderCartItems();
+                updateCartCount();
+            }
+        }
+    </script>
+</body>
+</html>
