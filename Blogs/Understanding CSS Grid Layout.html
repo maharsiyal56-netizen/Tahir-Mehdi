@@ -97,7 +97,7 @@
 <h2>Why CSS Grid is a game‑changer in modern frontend</h2>
 <p>CSS Grid is the first native layout module built for two dimensions: rows <strong>and</strong> columns at the same time. It frees you from nested div‑itis and lets you think like a designer. Whether it's a magazine‑style homepage, a dashboard, or a card gallery, Grid gives you surgical control — without touching <code>position: absolute</code> or complicated math. It’s supported in every modern browser, and it’s here to stay.</p>
 
-<div class="old float layout with clearfix vs. clean CSS Grid markup.png">[Image: side‑by‑side comparison – old float layout with clearfix vs. clean CSS Grid markup]</div>
+<div class="pic1.jpg">[Image: side‑by‑side comparison – old float layout with clearfix vs. clean CSS Grid markup]</div>
 
 <!-- ==================== CORE CONCEPTS ==================== -->
 <h2>Core concepts – the building blocks of Grid</h2>
@@ -110,7 +110,7 @@
   &lt;div class="item"&gt;2&lt;/div&gt;
   &lt;div class="item"&gt;3&lt;/div&gt;
 &lt;/div&gt;</code></pre>
-<div class="img-placeholder">[Image: diagram showing a container box with three child items, labelled "grid container" and "grid items"]</div>
+<div class="pic2.jpg">[Image: diagram showing a container box with three child items, labelled "grid container" and "grid items"]</div>
 
 <h3>2. Rows & columns + the <code>fr</code> unit</h3>
 <p>Define columns with <code>grid-template-columns</code>, rows with <code>grid-template-rows</code>. The <code>fr</code> unit (fraction) distributes available space like a boss. Think of it as “share the leftover pie”.</p>
@@ -120,7 +120,7 @@
   grid-template-rows: auto 200px;       /* first row auto height, second row fixed 200px */
   gap: 1rem;
 }</code></pre>
-<div class="img-placeholder">[Image: three‑column grid with widths 1fr, 2fr, 1fr – middle column visibly wider]</div>
+<div class="pic3.jpg">[Image: three‑column grid with widths 1fr, 2fr, 1fr – middle column visibly wider]</div>
 
 <h3>3. The <code>gap</code> property</h3>
 <p>Gone are the days of negative margins. <code>gap</code> (formerly <code>grid-gap</code>) adds spacing between rows and columns in one line.</p>
@@ -132,7 +132,7 @@
   justify-items: center;  /* items centered horizontally inside their cells */
   align-items: end;       /* items aligned to bottom vertically */
 }</code></pre>
-<div class="img-placeholder">[Image: 2x2 grid where child boxes are centered horizontally and bottom‑aligned vertically]</div>
+<div class="pic4.jpg">[Image: 2x2 grid where child boxes are centered horizontally and bottom‑aligned vertically]</div>
 
 <!-- ==================== PRO TIP ==================== -->
 <div class="pro-tip">
@@ -156,7 +156,7 @@
   gap: 1.5rem;
 }</code></pre>
 <p><strong>What happens:</strong> three cards sit side by side, and the gap adds breathing room. No floats, no clearfix.</p>
-<div class="img-placeholder">[Image: three equal cards with nice spacing – simple 3‑column grid]</div>
+<div class="pic5.jpg">[Image: three equal cards with nice spacing – simple 3‑column grid]</div>
 
 <h3>Responsive grid – auto‑fit with minmax</h3>
 <p>This is where Grid shines. Use <code>repeat(auto-fit, minmax(250px, 1fr))</code> – it creates as many columns as fit, each at least 250px, expanding to share space.</p>
