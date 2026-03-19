@@ -169,7 +169,7 @@
             <ul class="nav-menu">
                 <li class="nav-item"><a class="nav-link active">Home</a></li>
                 <li class="nav-item"><a class="nav-link">About</a></li>
-                <li class="nav-item"><a class="nav-link">Services</a></li>  <!-- new tab -->
+                <li class="nav-item"><a class="nav-link">Services</a></li>
                 <li class="nav-item"><a class="nav-link">Resume</a></li>
                 <li class="nav-item"><a class="nav-link">Projects</a></li>
                 <li class="nav-item"><a class="nav-link">Contact</a></li>
@@ -185,7 +185,7 @@
         <section id="home" class="page">
             <div class="container hero-content">
                 <h1 class="hero-title">Tahir Mehdi</h1>
-                <h2 style="font-size:2rem; margin-bottom:1rem;">Cybersecurity & Network Engineer (in the making)</h2>
+                <h2 style="font-size:2rem; margin-bottom:1rem;">Cybersecurity & Network Engineer</h2> <!-- "(in the making)" removed -->
                 <p style="max-width:650px; margin:0 auto 2.5rem; color:var(--text-light);">Secure networks · infrastructure simulations · Python automation</p>
                 <div class="hero-cta"><a class="btn">Explore Labs</a><a class="btn btn-outline">Let's Talk</a></div>
             </div>
@@ -205,7 +205,7 @@
             </div>
         </section>
 
-        <!-- ✦ NEW SERVICES SECTION with 5 beautiful cards / buttons ✦ -->
+        <!-- SERVICES SECTION with 5 beautiful cards -->
         <section id="services" class="page">
             <div class="container">
                 <div class="section-title"><h2>Services / expertise</h2></div>
@@ -289,7 +289,7 @@
                 </div>
                 <div class="certificates-grid">
                     <div class="certificate-card" id="certNetworking">
-                        <div class="certificate-img"><img src="Networking Basics.jpg" alt="Networking Basics" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22200%22%3E%3Crect%20width%3D%22300%22%20height%3D%22200%22%20fill%3D%22%230f2b4b%22%2F%3E%3Ctext%20x%3D%2230%22%20y%3D%22120%22%20fill%3D%22white%22%20font-size%3D%2220%22%3E📀%20Networking%20Basics%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                        <div class="certificate-img"><img src="Networking Basics.jpg" alt="Networking Basics" onerror="this.src='Networking Basics.jpg'></div>
                         <div class="certificate-info"><h4>Networking Basics</h4><p>Cisco Networking Academy · Feb 2026</p></div>
                     </div>
                     <div class="certificate-card" id="certCCNA">
@@ -353,7 +353,7 @@
         <p class="copyright" style="text-align:center;">© <span id="current-year">2025</span> Tahir Mehdi — built with packet tracer vibes</p>
     </footer>
 
-    <!-- MODAL (same for all) -->
+    <!-- MODAL (used only for CCNA / projects / service info) -->
     <div id="popupModal" class="modal">
         <div class="modal-content">
             <span class="close-icon">&times;</span>
@@ -438,8 +438,20 @@
             closeBtn.addEventListener('click', closeModal);
             window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
-            // certificates
-            document.getElementById('certNetworking').addEventListener('click', ()=> showModal('Networking Basics','Certificate preview (PDF simulation) – soon available.','fa-image'));
+            // CERTIFICATES : Networking Basics -> download placeholder PDF
+            document.getElementById('certNetworking').addEventListener('click', (e)=>{
+                e.stopPropagation();  // avoid any global interference
+                // create an invisible anchor and trigger download
+                const link = document.createElement('a');
+                link.href = 'placeholder-certificate.pdf';  // placeholder name
+                link.download = 'placeholder-certificate.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                // optional small feedback (could also show modal, but download is primary)
+                // we show a quick non‑modal feedback? we keep it clean.
+            });
+
             document.getElementById('certCCNA').addEventListener('click', ()=> showModal('CCNA (in progress)','Currently in Progress – I’m completing the course. Certificate will be displayed soon!','fa-clock'));
 
             // all project popup triggers
@@ -450,7 +462,7 @@
                 });
             });
 
-            // optional: service cards just show a coming soon (not mandatory, but nice)
+            // service cards : coming soon modal
             document.querySelectorAll('.service-card').forEach(card => {
                 card.addEventListener('click', ()=> showModal('Service info','Detailed service guide & case studies coming soon.','fa-bolt'));
             });
