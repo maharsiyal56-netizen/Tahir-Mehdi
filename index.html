@@ -3,214 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Tahir Mehdi · Cybersecurity & Network Portfolio</title>
+    <title>Tahir Mehdi · cyber / network portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,300&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ----- modern reset & variables (unchanged but keep) ----- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --primary: #2a2a72; --primary-light: #4a4acf; --secondary: #ff6e6c; --accent: #45b7d1;
-            --dark: #121212; --light: #f8f9fe; --card-light: #ffffff; --card-dark: #1e1e2e;
-            --text-light: #333; --text-dark: #eaeef2; --bg-light: #f4f7fb; --bg-dark: #0b0c14;
-            --shadow-sm: 0 10px 30px -10px rgba(0,0,0,0.15); --shadow-md: 0 20px 40px -12px rgba(0,0,0,0.2);
-            --shadow-hover: 0 30px 50px -15px rgba(42,42,114,0.3); --border-radius-card: 28px; --border-radius-img: 32px;
-            --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --gradient-1: linear-gradient(135deg, #2a2a72 0%, #45b7d1 100%);
-            --gradient-2: linear-gradient(135deg, #ff6e6c 0%, #f7b42c 100%);
+            --primary: #0f2b4b;        --primary-light: #1f4b6e; --secondary: #c9523e; --accent: #398e8f;
+            --dark: #0c1a2b; --light: #f4f7fc; --card-light: #ffffff; --card-dark: #192b3f;
+            --text-light: #1e2a3a; --text-dark: #e6edf5; --bg-light: #f0f4fa; --bg-dark: #0a1826;
+            --shadow-sm: 0 15px 35px -10px rgba(0,30,50,0.15); --shadow-md: 0 25px 45px -12px rgba(6,30,50,0.25);
+            --shadow-hover: 0 35px 55px -15px #0f2b4b80; --border-radius-card: 32px; --border-radius-img: 36px;
+            --transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            --gradient-1: linear-gradient(145deg, #0f2b4b, #2b5b78);
+            --gradient-2: linear-gradient(145deg, #c9523e, #d88b4a);
+            --gradient-card: linear-gradient(145deg, #ffffff08, #ffffff02);
+            --border-light: rgba(0,30,50,0.08); --border-dark: rgba(255,255,255,0.05);
         }
         .dark-mode {
-            --primary: #6d6dff; --primary-light: #8a8aff; --secondary: #ff8a88;
-            --bg-color: #0b0c14; --card-bg: #1b1e2a; --text-color: #edf2f7;
-            --text-light: #b0b8c5; --border-color: #2c3142;
-            --gradient-1: linear-gradient(135deg, #6d6dff 0%, #66d2ea 100%);
+            --primary: #6499b5; --primary-light: #7fb1cc; --secondary: #e27a68;
+            --bg-color: #0b1725; --card-bg: #142433; --text-color: #e7edf5;
+            --text-light: #b6c9db; --border-color: #1f3a4f;
+            --gradient-1: linear-gradient(145deg, #346a8c, #5790b0);
         }
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-color); color: var(--text-color); line-height: 1.5; transition: var(--transition); overflow-x: hidden; }
         h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; letter-spacing: -0.02em; }
         .container { width: 90%; max-width: 1300px; margin: 0 auto; padding: 0 20px; }
-        header { position: fixed; width: 100%; top: 0; z-index: 100; background: rgba(var(--bg-color-rgb), 0.75); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
-        :root, .dark-mode { --bg-color-rgb: 255,255,255; } .dark-mode { --bg-color-rgb: 11,12,20; }
-        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
-        .logo { font-size: 2rem; font-weight: 700; background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        header { position: fixed; width: 100%; top: 0; z-index: 100; background: color-mix(in srgb, var(--bg-color) 70%, transparent); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border-color); }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+        .logo { font-size: 2rem; font-weight: 700; background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: -0.02em; }
         .nav-menu { display: flex; gap: 2.5rem; list-style: none; }
-        .nav-link { color: var(--text-color); font-weight: 500; position: relative; }
-        .nav-link::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2.5px; background: var(--gradient-1); transition: 0.3s; }
+        .nav-link { color: var(--text-color); font-weight: 500; position: relative; padding: 6px 0; cursor: pointer; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2.5px; background: var(--gradient-1); border-radius: 4px; transition: 0.3s; }
         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
         .theme-toggle { background: var(--card-bg); border: 1px solid var(--border-color); color: var(--text-color); width: 48px; height: 48px; border-radius: 30px; font-size: 1.3rem; cursor: pointer; transition: var(--transition); }
-        .theme-toggle:hover { transform: rotate(15deg) scale(1.1); background: var(--gradient-1); color: white; }
+        .theme-toggle:hover { transform: rotate(20deg) scale(1.1); background: var(--gradient-1); color: white; border-color: transparent; }
         .hamburger { display: none; background: var(--card-bg); width: 48px; height: 48px; border-radius: 50%; align-items: center; justify-content: center; font-size: 1.5rem; cursor: pointer; border: 1px solid var(--border-color); }
 
-        /* buttons */
-        .btn { display: inline-block; padding: 14px 34px; background: var(--gradient-1); color: white; font-weight: 600; border-radius: 50px; transition: var(--transition); border: none; box-shadow: 0 8px 20px -5px var(--primary); position: relative; overflow: hidden; z-index: 1; cursor: pointer; }
+        .btn { display: inline-block; padding: 14px 34px; background: var(--gradient-1); color: white; font-weight: 600; border-radius: 60px; transition: var(--transition); border: none; box-shadow: 0 10px 22px -6px var(--primary); position: relative; overflow: hidden; z-index: 1; cursor: pointer; text-decoration: none; }
         .btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: var(--gradient-2); transition: left 0.5s ease; z-index: -1; }
         .btn:hover::before { left: 0; }
-        .btn:hover { transform: translateY(-6px); box-shadow: 0 18px 30px -5px var(--primary); }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 22px 35px -8px var(--primary); }
         .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; }
         .btn-outline:hover { color: white; border-color: transparent; }
 
-        /* home */
-        #home { min-height: 100vh; display: flex; align-items: center; padding-top: 70px; background: radial-gradient(circle at 80% 30%, rgba(69,183,209,0.08) 0%, transparent 30%); }
-        .hero-content { max-width: 900px; margin: 0 auto; text-align: center; }
-        .hero-title { font-size: clamp(2.8rem, 8vw, 5.2rem); background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        #home { min-height: 100vh; display: flex; align-items: center; padding-top: 70px; background: radial-gradient(circle at 70% 30%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 40%); }
+        .hero-title { font-size: clamp(2.8rem, 9vw, 5.4rem); background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; color: transparent; line-height: 1.1; }
         .hero-cta { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 
-        /* about bigger image */
         .about-content { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
-        .profile-img { width: 100%; max-width: 480px; height: auto; aspect-ratio: 1/1; object-fit: cover; border-radius: var(--border-radius-img); box-shadow: var(--shadow-md); border: 6px solid var(--card-bg); }
-        .profile-img:hover { transform: scale(1.02) translateY(-8px); box-shadow: var(--shadow-hover); }
+        .profile-img { width: 100%; max-width: 480px; aspect-ratio: 1/1; object-fit: cover; border-radius: 40% 60% 40% 60% / 60% 40% 60% 40%; box-shadow: var(--shadow-md); border: 4px solid var(--card-bg); transition: 1s; }
+        .profile-img:hover { border-radius: 50% 50% 40% 60% / 50% 50% 40% 60%; transform: scale(1.02); }
 
-        /* resume */
-        .resume-container { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; }
-        .timeline-item { background: var(--card-bg); padding: 28px; border-radius: 28px; margin-bottom: 24px; border-left: 6px solid var(--primary); box-shadow: var(--shadow-sm); transition: var(--transition); }
-        .skills-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 30px; }
-        .skill-bar { height: 10px; background: var(--border-color); border-radius: 10px; overflow: hidden; }
-        .skill-progress { height: 100%; background: var(--gradient-1); width: 0; border-radius: 10px; transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1); }
-
-        /* certificates grid (clear visible) */
-        .certificates-grid {
+        /* services cards – beautiful grid */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
             gap: 40px;
-            margin: 60px 0;
+            margin: 60px 0 20px;
         }
-        .certificate-card {
+        .service-card {
             background: var(--card-bg);
-            border-radius: 32px;
-            overflow: hidden;
+            border-radius: 48px;
+            padding: 40px 30px;
             box-shadow: var(--shadow-md);
-            transition: var(--transition);
             border: 1px solid var(--border-color);
+            transition: var(--transition);
             cursor: pointer;
+            backdrop-filter: blur(8px);
         }
-        .certificate-card:hover {
+        .service-card:hover {
             transform: translateY(-16px) scale(1.02);
             box-shadow: var(--shadow-hover);
+            border-color: var(--primary-light);
         }
+        .service-icon {
+            font-size: 3.5rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 20px;
+        }
+        .service-card h4 { font-size: 1.9rem; margin-bottom: 20px; }
+        .service-points { list-style: none; text-align: left; margin-top: 25px; }
+        .service-points li { margin: 16px 0; display: flex; gap: 14px; align-items: center; font-size: 1.05rem; }
+        .service-points i { color: var(--secondary); font-size: 1.3rem; width: 28px; }
+
+        .resume-container { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; }
+        .timeline-item { background: var(--card-bg); padding: 28px; border-radius: 32px; margin-bottom: 24px; border-left: 6px solid var(--primary); box-shadow: var(--shadow-sm); }
+        .skill-bar { height: 10px; background: var(--border-color); border-radius: 10px; overflow: hidden; }
+        .skill-progress { height: 100%; background: var(--gradient-1); width: 0; border-radius: 10px; transition: width 1.5s; }
+
+        .certificates-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 40px; margin: 60px 0;
+        }
+        .certificate-card {
+            background: var(--card-bg); border-radius: 42px; overflow: hidden; box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color); transition: var(--transition); cursor: pointer;
+        }
+        .certificate-card:hover { transform: translateY(-16px) scale(1.01); box-shadow: var(--shadow-hover); }
         .certificate-img { height: 250px; background: var(--gradient-1); overflow: hidden; }
         .certificate-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
-        .certificate-card:hover .certificate-img img { transform: scale(1.08); }
+        .certificate-card:hover .certificate-img img { transform: scale(1.1); }
         .certificate-info { padding: 28px; }
 
-        /* projects grid — bigger boxes, clear */
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 45px;
-            margin: 50px 0;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 45px; margin: 50px 0;
         }
         .project-card {
-            background: var(--card-bg);
-            border-radius: 36px;
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-color);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
+            background: var(--card-bg); border-radius: 48px; overflow: hidden; box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color); transition: var(--transition); display: flex; flex-direction: column;
         }
-        .project-card:hover {
-            transform: translateY(-20px) scale(1.01);
-            box-shadow: var(--shadow-hover);
-        }
+        .project-card:hover { transform: translateY(-20px) scale(1.01); box-shadow: var(--shadow-hover); }
         .project-img { height: 260px; background: var(--gradient-2); overflow: hidden; }
         .project-img img { width: 100%; height: 100%; object-fit: cover; }
-        .project-info { padding: 32px; flex: 1; display: flex; flex-direction: column; }
-        .project-info h3 { font-size: 1.9rem; margin-bottom: 15px; }
-        .project-info p { font-size: 1.1rem; margin-bottom: 25px; color: var(--text-light); flex: 1; }
-        .project-links { display: flex; gap: 18px; margin-top: 15px; flex-wrap: wrap; }
-        .project-links .btn { padding: 12px 28px; font-size: 1rem; }
+        .project-info { padding: 32px; flex: 1; }
+        .project-info h3 { font-size: 2rem; margin-bottom: 15px; }
+        .project-links { display: flex; gap: 18px; margin-top: 25px; flex-wrap: wrap; }
 
-        /* contact */
-        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: var(--card-bg); border-radius: 60px; padding: 60px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); }
+        .contact-content { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; background: var(--card-bg); border-radius: 70px; padding: 60px; box-shadow: var(--shadow-md); border: 1px solid var(--border-color); }
         .contact-item { display: flex; align-items: center; gap: 18px; margin-bottom: 25px; }
-        .contact-item i { width: 60px; height: 60px; background: var(--gradient-1); border-radius: 22px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; }
-        .contact-form { background: var(--bg-color); padding: 45px; border-radius: 42px; }
-        .form-group input, .form-group textarea { width: 100%; padding: 18px; border: 1.5px solid var(--border-color); border-radius: 40px; background: var(--card-bg); color: var(--text-color); }
+        .contact-item i { width: 60px; height: 60px; background: var(--gradient-1); border-radius: 30px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem; }
+        .contact-form { background: var(--bg-color); padding: 45px; border-radius: 50px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 18px; border: 1.5px solid var(--border-color); border-radius: 50px; background: var(--card-bg); color: var(--text-color); }
 
-        /* footer & social */
         .footer { padding: 70px 0 40px; background: var(--card-bg); border-top: 1px solid var(--border-color); }
-        .social-icon { width: 62px; height: 62px; border-radius: 35px; background: var(--gradient-1); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; transition: 0.25s; }
-        .social-icon:hover { transform: scale(1.2) rotate(6deg); background: var(--gradient-2); }
+        .social-icon { width: 62px; height: 62px; border-radius: 35px; background: var(--gradient-1); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; margin: 0 10px; transition: 0.25s; }
+        .social-icon:hover { transform: scale(1.2) rotate(5deg); background: var(--gradient-2); }
 
-        /* popup modal (improved) */
+        /* modal */
         .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0; top: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0,0,0,0.75);
-            backdrop-filter: blur(6px);
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.2s;
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.7); backdrop-filter: blur(8px); align-items: center; justify-content: center;
         }
         .modal-content {
-            background: var(--card-bg);
-            padding: 35px 45px;
-            border-radius: 60px;
-            max-width: 550px;
-            width: 90%;
-            text-align: center;
-            box-shadow: var(--shadow-hover);
-            border: 2px solid var(--primary);
-            position: relative;
+            background: var(--card-bg); padding: 40px 50px; border-radius: 80px; max-width: 550px; width: 90%;
+            text-align: center; box-shadow: var(--shadow-hover); border: 2px solid var(--primary); position: relative;
         }
         .modal-content h3 { font-size: 2.2rem; background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 20px; }
-        .modal-content p { font-size: 1.3rem; margin: 25px 0; color: var(--text-light); }
-        .modal-content i { font-size: 4rem; color: var(--primary); margin-bottom: 15px; }
-        .modal-content .close-btn {
-            margin-top: 25px;
-            background: var(--gradient-2);
-            border: none;
-            padding: 12px 40px;
-            border-radius: 40px;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .modal-content .close-btn:hover { transform: scale(1.05); }
-        .close-icon {
-            position: absolute;
-            top: 20px; right: 25px;
-            font-size: 2rem;
-            cursor: pointer;
-            color: var(--text-light);
-        }
-        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+        .modal-content p { font-size: 1.3rem; margin: 25px 0; }
+        .close-icon { position: absolute; top: 25px; right: 30px; font-size: 2.5rem; cursor: pointer; color: var(--text-light); }
+        .close-btn { margin-top: 25px; background: var(--gradient-2); border: none; padding: 14px 45px; border-radius: 60px; color: white; font-weight: bold; font-size: 1.2rem; cursor: pointer; }
 
-        /* responsive */
         @media (max-width: 1024px) { 
-            .about-content { grid-template-columns: 1fr; text-align: center; } 
-            .resume-container { grid-template-columns: 1fr; } 
-            .contact-content { grid-template-columns: 1fr; } 
+            .about-content, .resume-container, .contact-content { grid-template-columns: 1fr; } 
+            .services-grid { grid-template-columns: repeat(2,1fr); }
         }
         @media (max-width: 768px) {
-            .nav-menu { position: fixed; top: 85px; left: -100%; flex-direction: column; background: var(--card-bg); width: 90%; padding: 40px; border-radius: 40px; transition: 0.3s; }
+            .nav-menu { position: fixed; top: 85px; left: -100%; flex-direction: column; background: var(--card-bg); width: 90%; padding: 40px; border-radius: 40px; transition: 0.3s; box-shadow: var(--shadow-md); }
             .nav-menu.active { left: 5%; }
             .hamburger { display: flex; }
-            .projects-grid { grid-template-columns: 1fr; }
+            .projects-grid, .services-grid { grid-template-columns: 1fr; }
         }
         .section { padding: 100px 0; }
         .section-title { text-align: center; margin-bottom: 60px; }
-        .section-title h2 { font-size: 3rem; display: inline-block; background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .section-title::after { content: ''; display: block; width: 100px; height: 5px; background: var(--gradient-1); margin: 15px auto 0; border-radius: 5px; }
+        .section-title h2 { font-size: 3.2rem; display: inline-block; background: var(--gradient-1); -webkit-background-clip: text; background-clip: text; color: transparent; }
+        .section-title::after { content: ''; display: block; width: 130px; height: 5px; background: var(--gradient-2); margin: 20px auto 0; border-radius: 5px; }
     </style>
 </head>
 <body>
-    <header> <!-- same as before, nav, etc. --> 
+    <header>
         <div class="container nav-container">
-            <a href="#home" class="logo">Tahir Mehdi</a>
+            <a href="#home" class="logo">⌘ Tahir Mehdi</a>
             <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="#resume" class="nav-link">Resume</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a class="nav-link active">Home</a></li>
+                <li class="nav-item"><a class="nav-link">About</a></li>
+                <li class="nav-item"><a class="nav-link">Services</a></li>  <!-- new tab -->
+                <li class="nav-item"><a class="nav-link">Resume</a></li>
+                <li class="nav-item"><a class="nav-link">Projects</a></li>
+                <li class="nav-item"><a class="nav-link">Contact</a></li>
             </ul>
-            <div class="nav-actions" style="display: flex; gap: 8px;">
+            <div style="display: flex; gap: 8px;">
                 <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
                 <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
             </div>
@@ -218,13 +182,12 @@
     </header>
 
     <main>
-        <!-- home, about same (unchanged) -->
         <section id="home" class="page">
             <div class="container hero-content">
-                <h1 class="hero-title">Hi, I'm Tahir Mehdi</h1>
-                <h2 class="hero-subtitle">Cybersecurity & Network Engineer (in the making)</h2>
-                <p style="max-width:650px; margin:0 auto 2.5rem; color:var(--text-light);">I build secure networks, simulate infrastructures, and automate with Python.</p>
-                <div class="hero-cta"><a href="#projects" class="btn">Explore Labs</a><a href="#contact" class="btn btn-outline">Let's Talk</a></div>
+                <h1 class="hero-title">Tahir Mehdi</h1>
+                <h2 style="font-size:2rem; margin-bottom:1rem;">Cybersecurity & Network Engineer (in the making)</h2>
+                <p style="max-width:650px; margin:0 auto 2.5rem; color:var(--text-light);">Secure networks · infrastructure simulations · Python automation</p>
+                <div class="hero-cta"><a class="btn">Explore Labs</a><a class="btn btn-outline">Let's Talk</a></div>
             </div>
         </section>
 
@@ -232,248 +195,266 @@
             <div class="container">
                 <div class="section-title"><h2>About Me</h2></div>
                 <div class="about-content">
-                    <div class="about-img"><img src="profile pic.jpeg" alt="Tahir Mehdi" class="profile-img" onerror="this.src='https://placehold.co/600x600/2a2a72/white?text=Tahir+M'"></div>
-                    <div class="about-text">
-                        <p class="bio-text"><strong>BSCS student</strong> with <strong>Cisco Networking Basics</strong> & <strong>CompTIA Network+</strong> certified. I breathe networking – from VLANs to firewall policies.</p>
-                        <p class="bio-text">I’m passionate about cybersecurity, and I spend hours in Packet Tracer/GNS3 building multi-campus networks. Python helps me automate the boring stuff.</p>
-                        <p class="bio-text">Currently deep into CCNA and exploring ethical hacking.</p>
-                        <div style="display:flex; gap:15px; margin-top:30px;"><a href="#resume" class="btn"><i class="fas fa-file-alt"></i> Resume</a><a href="#contact" class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact</a></div>
+                    <div><img src="profile pic.jpeg" alt="Tahir Mehdi" class="profile-img" onerror="this.src='https://placehold.co/600x600/0f2b4b/white?text=T.M.'"></div>
+                    <div><p class="bio-text"><strong>BSCS student</strong> · Cisco Networking Basics & CompTIA Network+ certified. I breathe VLANs, ACLs, and packet-level analysis.</p>
+                        <p>Packet Tracer & GNS3 everyday. Python for network automation.</p>
+                        <p>CCNA candidate · passionate about ethical hacking.</p>
+                        <div style="display:flex; gap:15px; margin-top:30px;"><a class="btn"><i class="fas fa-file-alt"></i> Resume</a><a class="btn btn-outline"><i class="fas fa-paper-plane"></i> Contact</a></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- resume + certificates (clickable) -->
+        <!-- ✦ NEW SERVICES SECTION with 5 beautiful cards / buttons ✦ -->
+        <section id="services" class="page">
+            <div class="container">
+                <div class="section-title"><h2>Services / expertise</h2></div>
+                <div class="services-grid">
+                    <!-- 1. Network Setup -->
+                    <div class="service-card" id="service1">
+                        <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+                        <h4>Network Setup & config</h4>
+                        <ul class="service-points">
+                            <li><i class="fas fa-angle-right"></i> LAN/WAN design & implementation</li>
+                            <li><i class="fas fa-angle-right"></i> Routers, switches, VLANS, subnetting</li>
+                            <li><i class="fas fa-angle-right"></i> IP schemes, inter-VLAN routing</li>
+                        </ul>
+                    </div>
+                    <!-- 2. Troubleshooting -->
+                    <div class="service-card" id="service2">
+                        <div class="service-icon"><i class="fas fa-tools"></i></div>
+                        <h4>Troubleshooting & support</h4>
+                        <ul class="service-points">
+                            <li><i class="fas fa-angle-right"></i> Connectivity diagnostics</li>
+                            <li><i class="fas fa-angle-right"></i> Router/switch error analysis</li>
+                            <li><i class="fas fa-angle-right"></i> Performance monitoring & fix</li>
+                        </ul>
+                    </div>
+                    <!-- 3. Security basics -->
+                    <div class="service-card" id="service3">
+                        <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+                        <h4>Security & Firewall basics</h4>
+                        <ul class="service-points">
+                            <li><i class="fas fa-angle-right"></i> Basic security implementation</li>
+                            <li><i class="fas fa-angle-right"></i> ACLs, port security, permissions</li>
+                            <li><i class="fas fa-angle-right"></i> Secure router/switch hardening</li>
+                        </ul>
+                    </div>
+                    <!-- 4. Monitoring & doc -->
+                    <div class="service-card" id="service4">
+                        <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Monitoring & Documentation</h4>
+                        <ul class="service-points">
+                            <li><i class="fas fa-angle-right"></i> Wireshark / ping / traceroute</li>
+                            <li><i class="fas fa-angle-right"></i> Network diagrams & docs</li>
+                            <li><i class="fas fa-angle-right"></i> Health checks & reporting</li>
+                        </ul>
+                    </div>
+                    <!-- 5. Freelance/consultancy -->
+                    <div class="service-card" id="service5">
+                        <div class="service-icon"><i class="fas fa-laptop-house"></i></div>
+                        <h4>Freelance & Consultancy</h4>
+                        <ul class="service-points">
+                            <li><i class="fas fa-angle-right"></i> Small biz remote setup</li>
+                            <li><i class="fas fa-angle-right"></i> Home office / startup network</li>
+                            <li><i class="fas fa-angle-right"></i> Beginner workshops / tutorials</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="resume" class="page">
             <div class="container">
-                <div class="section-title"><h2>My Resume</h2></div>
+                <div class="section-title"><h2>Resume & credentials</h2></div>
                 <div class="resume-container">
-                    <!-- left column -->
-                    <div class="resume-column">
-                        <h3>📘 Education</h3>
-                        <div class="timeline-item"><span class="timeline-date">2020-2021</span><h4>Matriculation</h4><p>BISE Multan</p></div>
-                        <div class="timeline-item"><span class="timeline-date">2022-2024</span><h4>Intermediate</h4><p>BISE Multan</p></div>
-                        <div class="timeline-item"><span class="timeline-date">Current</span><h4>BSCS</h4><p>Univ. of Southern Punjab</p></div>
+                    <div><h3>📘 Education</h3>
+                        <div class="timeline-item"><span>2020-2021</span><h4>Matriculation</h4><p>BISE Multan</p></div>
+                        <div class="timeline-item"><span>2022-2024</span><h4>Intermediate</h4><p>BISE Multan</p></div>
+                        <div class="timeline-item"><span>Current</span><h4>BSCS</h4><p>Univ. of Southern Punjab</p></div>
                         <h3 style="margin-top:35px;">💼 Experience</h3>
-                        <div class="timeline-item"><span class="timeline-date">2023–Present</span><h4>Web Developer (Freelance)</h4></div>
-                        <div class="timeline-item"><span class="timeline-date">2024–Present</span><h4>Graphic Designer (Freelance)</h4></div>
+                        <div class="timeline-item"><span>2023–Present</span><h4>Web Developer (Freelance)</h4></div>
+                        <div class="timeline-item"><span>2024–Present</span><h4>Graphic Designer (Freelance)</h4></div>
                     </div>
-                    <!-- right column skills etc (shortened) -->
-                    <div class="resume-column">
-                        <h3>⚙️ Skills</h3>
-                        <div class="skills-category"><h4>Networking & Security</h4>
+                    <div><h3>⚙️ Skills</h3>
+                        <div><h4>Networking & Security</h4>
                             <div class="skills-container">
-                                <div class="skill-item"><div class="skill-name"><span>CISCO Networking Basics</span><span>95%</span></div><div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div></div>
-                                <div class="skill-item"><div class="skill-name"><span>CompTIA Network+</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div></div>
-                                <div class="skill-item"><div class="skill-name"><span>Firewall & ACLs</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div></div>
-                                <div class="skill-item"><div class="skill-name"><span>Wireshark</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div></div>
+                                <div><div class="skill-name"><span>CISCO Basics</span><span>95%</span></div><div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div></div>
+                                <div><div class="skill-name"><span>CompTIA Network+</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div></div>
+                                <div><div class="skill-name"><span>Firewall & ACLs</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div></div>
+                                <div><div class="skill-name"><span>Wireshark</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div></div>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- CERTIFICATE CARDS (clickable) -->
                 <div class="certificates-grid">
-                    <!-- Networking Basics card -->
                     <div class="certificate-card" id="certNetworking">
-                        <div class="certificate-img"><img src="Networking Basics.jpg" alt="Networking Basics" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22200%22%3E%3Crect%20width%3D%22300%22%20height%3D%22200%22%20fill%3D%22%232a2a72%22%2F%3E%3Ctext%20x%3D%2230%22%20y%3D%22120%22%20fill%3D%22white%22%20font-size%3D%2220%22%3E📀%20Networking%20Basics%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                        <div class="certificate-img"><img src="Networking Basics.jpg" alt="Networking Basics" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22200%22%3E%3Crect%20width%3D%22300%22%20height%3D%22200%22%20fill%3D%22%230f2b4b%22%2F%3E%3Ctext%20x%3D%2230%22%20y%3D%22120%22%20fill%3D%22white%22%20font-size%3D%2220%22%3E📀%20Networking%20Basics%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
                         <div class="certificate-info"><h4>Networking Basics</h4><p>Cisco Networking Academy · Feb 2026</p></div>
                     </div>
-                    <!-- CCNA in progress card -->
                     <div class="certificate-card" id="certCCNA">
-                        <div class="certificate-img"><img src="ccna-progress.jpg" alt="CCNA progress" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22200%22%3E%3Crect%20width%3D%22300%22%20height%3D%22200%22%20fill%3D%22%23ff6e6c%22%2F%3E%3Ctext%20x%3D%2230%22%20y%3D%22120%22%20fill%3D%22white%22%20font-size%3D%2220%22%3E📌%20CCNA%20(in%20progress)%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                        <div class="certificate-img"><img src="ccna-progress.jpg" alt="CCNA progress" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22200%22%3E%3Crect%20width%3D%22300%22%20height%3D%22200%22%20fill%3D%22%23c9523e%22%2F%3E%3Ctext%20x%3D%2230%22%20y%3D%22120%22%20fill%3D%22white%22%20font-size%3D%2220%22%3E📌%20CCNA%20(in%20progress)%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
                         <div class="certificate-info"><h4>CCNA (200-301) – in progress</h4><p>Cisco · expected June 2026</p></div>
                     </div>
                 </div>
-                <div class="download-btn" style="text-align:center;"><a href="TahirMehdi.pdf" class="btn"><i class="fas fa-download"></i> Download full resume</a></div>
+                <div style="text-align:center;"><a class="btn"><i class="fas fa-download"></i> Download full resume</a></div>
             </div>
         </section>
 
-        <!-- PROJECTS SECTION (bigger boxes, all buttons clickable popup) -->
         <section id="projects" class="page">
             <div class="container">
                 <div class="section-title"><h2>Projects & Labs</h2></div>
                 <div class="projects-grid">
-                    <!-- project 1 -->
-                    <div class="project-card">
-                        <div class="project-img"><img src="vlan-lab.jpg" alt="VLAN" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%234a4acf%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🌐%20VLAN%20Trunk%20lab%3C%2Ftext%3E%3C%2Fsvg%3E'></div>
-                        <div class="project-info">
-                            <h3>VLAN & Trunking Lab</h3>
-                            <p>Multi-switch topology with inter‑VLAN routing, VTP, and extended ACLs in Packet Tracer.</p>
-                            <div class="project-links">
-                                <button class="btn project-popup-trigger">.pkt</button>
-                                <button class="btn btn-outline project-popup-trigger">Guide</button>
-                            </div>
-                        </div>
+                    <div class="project-card"><div class="project-img"><img src="vlan-lab.jpg" alt="VLAN" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%23398e8f%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🌐%20VLAN%20Trunk%20lab%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                        <div class="project-info"><h3>VLAN & Trunking Lab</h3><p>Multi-switch with inter‑VLAN routing, VTP, ACLs.</p>
+                            <div class="project-links"><button class="btn project-popup-trigger">.pkt</button><button class="btn btn-outline project-popup-trigger">Guide</button></div></div>
                     </div>
-                    <!-- project 2 -->
-                    <div class="project-card">
-                        <div class="project-img"><img src="subnet.jpg" alt="subnet" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%2345b7d1%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🐍%20Python%20Subnet%20Calc%3C%2Ftext%3E%3C%2Fsvg%3E'></div>
-                        <div class="project-info">
-                            <h3>Python Subnet Calculator</h3>
-                            <p>CLI tool that outputs network address, broadcast, wildcard, usable hosts from CIDR.</p>
-                            <div class="project-links">
-                                <button class="btn project-popup-trigger">Code</button>
-                                <button class="btn btn-outline project-popup-trigger">Demo</button>
-                            </div>
-                        </div>
+                    <div class="project-card"><div class="project-img"><img src="subnet.jpg" alt="subnet" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%231f4b6e%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🐍%20Python%20Subnet%20Calc%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                        <div class="project-info"><h3>Python Subnet Calculator</h3><p>CLI tool: network, broadcast, wildcard from CIDR.</p>
+                            <div class="project-links"><button class="btn project-popup-trigger">Code</button><button class="btn btn-outline project-popup-trigger">Demo</button></div></div>
                     </div>
-                    <!-- project 3 -->
-                    <div class="project-card">
-                        <div class="project-img"><img src="wireshark.jpg" alt="wireshark" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%232a2a72%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E📡%20Wireshark%20PCAP%3C%2Ftext%3E%3C%2Fsvg%3E'></div>
-                        <div class="project-info">
-                            <h3>Wireshark – HTTP & ARP</h3>
-                            <p>Analysed traffic, filtered for malicious patterns, documented handshakes.</p>
-                            <div class="project-links">
-                                <button class="btn project-popup-trigger">PCAP</button>
-                                <button class="btn btn-outline project-popup-trigger">Report</button>
-                            </div>
-                        </div>
+                    <div class="project-card"><div class="project-img"><img src="wireshark.jpg" alt="wireshark" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%230f2b4b%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E📡%20Wireshark%20PCAP%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                        <div class="project-info"><h3>Wireshark – HTTP & ARP</h3><p>Analysed malicious patterns, handshake analysis.</p>
+                            <div class="project-links"><button class="btn project-popup-trigger">PCAP</button><button class="btn btn-outline project-popup-trigger">Report</button></div></div>
                     </div>
-                    <!-- project 4 -->
-                    <div class="project-card">
-                        <div class="project-img"><img src="acl.jpg" alt="ACL" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%23ff6e6c%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🔥%20ACL%20Firewall%20Lab%3C%2Ftext%3E%3C%2Fsvg%3E'></div>
-                        <div class="project-info">
-                            <h3>Extended ACL & Firewall</h3>
-                            <p>Configured inbound/outbound ACLs on routers to permit/deny specific traffic.</p>
-                            <div class="project-links">
-                                <button class="btn project-popup-trigger">Topology</button>
-                                <button class="btn btn-outline project-popup-trigger">Config</button>
-                            </div>
-                        </div>
+                    <div class="project-card"><div class="project-img"><img src="acl.jpg" alt="ACL" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%23c9523e%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🔥%20Extended%20ACL%20Lab%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                        <div class="project-info"><h3>Extended ACL & Firewall</h3><p>Inbound/outbound ACLs, traffic filtering.</p>
+                            <div class="project-links"><button class="btn project-popup-trigger">Topology</button><button class="btn btn-outline project-popup-trigger">Config</button></div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- contact (same) -->
         <section id="contact" class="page">
             <div class="container">
                 <div class="section-title"><h2>Get in touch</h2></div>
                 <div class="contact-content">
-                    <div class="contact-info"><h3>Let's connect</h3><p>Available for networking roles, freelance, or just a tech chat.</p>
+                    <div><h3>Let's connect</h3><p>Available for networking roles / freelance / tech chat.</p>
                         <div class="contact-item"><i class="fas fa-envelope"></i> <span>tahirmehdi001@gmail.com</span></div>
                         <div class="contact-item"><i class="fas fa-phone-alt"></i> <span>+92-330-4166073</span></div>
                         <div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Multan, Pakistan</span></div>
-                        <div class="social-icons" style="justify-content:flex-start; margin-top:25px;">
-                            <a href="https://www.linkedin.com/in/tahirmehdi18/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://github.com/maharsiyal56-netizen" class="social-icon"><i class="fab fa-github"></i></a>
+                        <div style="margin-top:25px;">
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
-                    <div class="contact-form"><form><div class="form-group"><input type="text" placeholder="Your name" required></div><div class="form-group"><input type="email" placeholder="Email address" required></div><div class="form-group"><input type="text" placeholder="Subject"></div><div class="form-group"><textarea rows="5" placeholder="Message..." required></textarea></div><button type="submit" class="btn" style="width:100%;">Send message</button></form></div>
+                    <div class="contact-form"><form><div class="form-group"><input type="text" placeholder="Your name"></div><div class="form-group"><input type="email" placeholder="Email address"></div><div class="form-group"><input type="text" placeholder="Subject"></div><div class="form-group"><textarea rows="5" placeholder="Message..."></textarea></div><button type="submit" class="btn" style="width:100%;">Send message</button></form></div>
                 </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/tahirmehdi18/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/maharsiyal56-netizen" class="social-icon"><i class="fab fa-github"></i></a>
-            <a href="mailto:tahirmehdi001@gmail.com" class="social-icon"><i class="far fa-envelope"></i></a>
+        <div style="text-align:center; margin-bottom:25px;">
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="#" class="social-icon"><i class="far fa-envelope"></i></a>
         </div>
-        <p class="copyright">© <span id="current-year">2025</span> Tahir Mehdi — built with packet tracer vibes</p>
+        <p class="copyright" style="text-align:center;">© <span id="current-year">2025</span> Tahir Mehdi — built with packet tracer vibes</p>
     </footer>
 
-    <!-- POPUP MODAL (single modal used for all) -->
+    <!-- MODAL (same for all) -->
     <div id="popupModal" class="modal">
         <div class="modal-content">
-            <span class="close-icon" id="modalCloseIcon">&times;</span>
-            <i class="fas fa-certificate" id="modalIcon" style="font-size:4rem; color:var(--primary);"></i>
-            <h3 id="modalTitle">Networking Basics</h3>
-            <p id="modalMessage">Your certificate will open here (simulated). In real implementation, link to PDF/image.</p>
-            <button class="close-btn" id="modalCloseBtn">Close</button>
+            <span class="close-icon">&times;</span>
+            <i class="fas fa-certificate" id="modalIcon" style="font-size:4rem;"></i>
+            <h3 id="modalTitle">Title</h3>
+            <p id="modalMessage">Message</p>
+            <button class="close-btn">Close</button>
         </div>
     </div>
 
     <script>
-        (function() {
-            // theme, mobile etc (keep original)
+        (function(){
             const themeToggle = document.getElementById('theme-toggle');
             const hamburger = document.getElementById('hamburger');
             const navMenu = document.querySelector('.nav-menu');
             const navLinks = document.querySelectorAll('.nav-link');
             const skillBars = document.querySelectorAll('.skill-progress');
             document.getElementById('current-year').textContent = new Date().getFullYear();
-            
+
             themeToggle.addEventListener('click', ()=>{
                 document.body.classList.toggle('dark-mode');
                 localStorage.setItem('theme', document.body.classList.contains('dark-mode')?'dark':'light');
                 themeToggle.innerHTML = document.body.classList.contains('dark-mode')?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';
             });
             if(localStorage.getItem('theme')==='dark') { document.body.classList.add('dark-mode'); themeToggle.innerHTML='<i class="fas fa-sun"></i>'; }
-    
+
             hamburger.addEventListener('click', ()=>{
                 navMenu.classList.toggle('active');
                 hamburger.innerHTML = navMenu.classList.contains('active')?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';
             });
-    
+
+            // smooth scroll + active link
+            const sections = document.querySelectorAll('.page');
+            const headerHeight = document.querySelector('header').offsetHeight;
+
+            function setActiveLink(){
+                let current = '';
+                sections.forEach(s=>{ const top = s.offsetTop - headerHeight - 10; if(window.scrollY >= top && window.scrollY < top + s.offsetHeight) current = s.getAttribute('id'); });
+                navLinks.forEach(link=>{ link.classList.remove('active'); if(link.innerText.toLowerCase().includes(current) || (current==='services'&&link.innerText==='Services')) link.classList.add('active'); });
+            }
+
             navLinks.forEach(link=>{
                 link.addEventListener('click', (e)=>{
                     e.preventDefault();
-                    const targetId = link.getAttribute('href');
-                    const target = document.querySelector(targetId);
-                    navLinks.forEach(l=>l.classList.remove('active'));
-                    link.classList.add('active');
+                    const text = link.innerText.trim();
+                    const targetMap = { 'Home':'home','About':'about','Services':'services','Resume':'resume','Projects':'projects','Contact':'contact' };
+                    const id = targetMap[text];
+                    if(id){
+                        const target = document.getElementById(id);
+                        if(target) window.scrollTo({top:target.offsetTop-headerHeight, behavior:'smooth'});
+                    }
                     if(navMenu.classList.contains('active')){ navMenu.classList.remove('active'); hamburger.innerHTML='<i class="fas fa-bars"></i>'; }
-                    if(target){ const header=document.querySelector('header').offsetHeight; window.scrollTo({top:target.offsetTop-header, behavior:'smooth'}); }
                 });
             });
-    
-            window.addEventListener('scroll', ()=>{
-                const sections = document.querySelectorAll('.page');
-                const header = document.querySelector('header').offsetHeight;
-                let current='';
-                sections.forEach(s=>{ const top=s.offsetTop-header; if(window.scrollY>=top && window.scrollY<top+s.offsetHeight) current=s.getAttribute('id'); });
-                navLinks.forEach(l=>{ l.classList.remove('active'); if(l.getAttribute('href')===`#${current}`) l.classList.add('active'); });
-            });
-    
-            function animateSkillBars(){ skillBars.forEach(bar=>{ bar.style.width = bar.getAttribute('data-width'); }); }
+
+            window.addEventListener('scroll', setActiveLink);
+            setActiveLink();
+
+            // skill bars animation when resume visible
             const observer = new IntersectionObserver((entries)=>{
-                entries.forEach(entry=>{ if(entry.isIntersecting && entry.target.id==='resume') animateSkillBars(); });
+                entries.forEach(entry=>{ if(entry.isIntersecting && entry.target.id==='resume') { skillBars.forEach(bar=>{ bar.style.width = bar.getAttribute('data-width'); }); } });
             }, {threshold:0.2});
             observer.observe(document.getElementById('resume'));
             skillBars.forEach(bar=>bar.style.width='0');
-    
-            // ---------- POPUP LOGIC ----------
+
+            // MODAL logic
             const modal = document.getElementById('popupModal');
             const modalTitle = document.getElementById('modalTitle');
-            const modalMessage = document.getElementById('modalMessage');
+            const modalMsg = document.getElementById('modalMessage');
             const modalIcon = document.getElementById('modalIcon');
-            const closeIcon = document.getElementById('modalCloseIcon');
-            const closeBtn = document.getElementById('modalCloseBtn');
-    
-            function showModal(title, message, iconClass = 'fa-certificate') {
-                modalTitle.textContent = title;
-                modalMessage.textContent = message;
-                modalIcon.className = `fas ${iconClass} fa-4x`; // keep size
+            const closeIcon = document.querySelector('.close-icon');
+            const closeBtn = document.querySelector('.close-btn');
+
+            function showModal(title, message, icon='fa-certificate'){
+                modalTitle.innerText = title;
+                modalMsg.innerText = message;
+                modalIcon.className = `fas ${icon} fa-4x`;
                 modal.style.display = 'flex';
             }
-    
-            // close modal
-            function closeModal() { modal.style.display = 'none'; }
+            function closeModal(){ modal.style.display = 'none'; }
             closeIcon.addEventListener('click', closeModal);
             closeBtn.addEventListener('click', closeModal);
             window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    
-            // CERTIFICATES click
-            document.getElementById('certNetworking').addEventListener('click', ()=>{
-                showModal('Networking Basics', 'Opening certificate preview (PDF/image simulation). In production, link to credential.', 'fa-image');
-            });
-            document.getElementById('certCCNA').addEventListener('click', ()=>{
-                showModal('CCNA (in progress)', 'Currently in Progress – I’m completing the course. Certificate will be displayed soon!', 'fa-clock');
-            });
-    
-            // PROJECT buttons (all show "in progress" message)
-            const projectPopupTriggers = document.querySelectorAll('.project-popup-trigger');
-            projectPopupTriggers.forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation();  // avoid card click if any
-                    showModal('Project in progress', 'This project is currently in progress – it will be displayed soon!', 'fa-code-branch');
+
+            // certificates
+            document.getElementById('certNetworking').addEventListener('click', ()=> showModal('Networking Basics','Certificate preview (PDF simulation) – soon available.','fa-image'));
+            document.getElementById('certCCNA').addEventListener('click', ()=> showModal('CCNA (in progress)','Currently in Progress – I’m completing the course. Certificate will be displayed soon!','fa-clock'));
+
+            // all project popup triggers
+            document.querySelectorAll('.project-popup-trigger').forEach(btn => {
+                btn.addEventListener('click', (e)=>{
+                    e.stopPropagation();
+                    showModal('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch');
                 });
             });
-    
-            // Optional: also if user clicks anywhere on project card background, but we have buttons only.
+
+            // optional: service cards just show a coming soon (not mandatory, but nice)
+            document.querySelectorAll('.service-card').forEach(card => {
+                card.addEventListener('click', ()=> showModal('Service info','Detailed service guide & case studies coming soon.','fa-bolt'));
+            });
+
         })();
     </script>
 </body>
