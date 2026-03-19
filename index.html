@@ -89,7 +89,7 @@
       background: transparent; border: 2px solid #00D4FF; color: #00D4FF;
     }
     .btn-outline:hover { background: #00D4FF; color: #010B13; }
-    .nav-link { color: var(--text-soft); font-weight: 500; }
+    .nav-link { color: var(--text-soft); font-weight: 500; cursor: pointer; }
     .nav-link::after { background: #00D4FF; }
     .service-icon i, .section-title h2, .logo {
       background: linear-gradient(145deg, #00D4FF, #2d7a7b);
@@ -116,6 +116,7 @@
     .theme-toggle {
       background: #02121f; border: 1px solid #00D4FF55; color: #00D4FF;
       width: 48px; height: 48px; border-radius: 60px; font-size: 1.3rem;
+      cursor: pointer;
     }
     /* stylish profile frame */
     .profile-frame {
@@ -146,7 +147,7 @@
       50% { filter: drop-shadow(0 0 20px #00D4FF); } 
       100% { filter: drop-shadow(0 0 5px #00D4FF); } 
     }
-    .logo { animation: logoPulse 4s infinite; font-size: 1.7rem; font-weight: 700; }
+    .logo { animation: logoPulse 4s infinite; font-size: 1.7rem; font-weight: 700; text-decoration: none; }
     header {
       background: color-mix(in srgb, #010B13 80%, transparent); backdrop-filter: blur(12px);
       border-bottom: 1px solid #00D4FF30; position: fixed; width: 100%; top: 0; z-index: 1000;
@@ -156,7 +157,7 @@
       height: 70px; padding: 0 20px;
     }
     .nav-menu { display: flex; gap: 25px; list-style: none; }
-    .nav-link { text-decoration: none; font-size: 1.1rem; position: relative; cursor: pointer; }
+    .nav-link { text-decoration: none; font-size: 1.1rem; position: relative; }
     .nav-link.active { color: #00D4FF; font-weight: 600; }
     .hamburger { display: none; font-size: 2rem; color: #00D4FF; cursor: pointer; }
 
@@ -204,7 +205,6 @@
       display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px;
       margin: 50px 0;
     }
-    /* individual certificate page is just a section—already separate style */
     .project-card { padding: 0; overflow: hidden; }
     .project-img { height: 240px; overflow: hidden; }
     .project-img img { width: 100%; height: 100%; object-fit: cover; }
@@ -233,7 +233,7 @@
     .modal-content.large img { max-width: 100%; max-height: 70vh; border-radius: 20px; }
     .small-modal { max-width: 500px; background: #021622; border: 3px solid #00D4FF; border-radius: 50px; padding: 50px; text-align: center; }
     .close-icon { position: absolute; top:20px; right:30px; font-size: 3rem; color: #00D4FF; cursor: pointer; }
-    .close-btn { background: #005B96; color: white; border: none; padding: 12px 40px; border-radius: 60px; margin-top: 25px; font-size: 1.2rem; }
+    .close-btn { background: #005B96; color: white; border: none; padding: 12px 40px; border-radius: 60px; margin-top: 25px; font-size: 1.2rem; cursor: pointer; }
 
     @media (max-width: 1024px) { .about-content, .resume-container, .contact-content { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
@@ -257,14 +257,14 @@
 <body>
 <header>
   <div class="container nav-container">
-    <a href="#home" class="logo">⌘ Tahir Mehdi</a>
+    <a href="#home" class="logo" onclick="scrollToSection('home'); return false;">⌘ Tahir Mehdi</a>
     <ul class="nav-menu">
-      <li class="nav-item"><a class="nav-link" data-nav="home">Home</a></li>
-      <li class="nav-item"><a class="nav-link" data-nav="about">About</a></li>
-      <li class="nav-item"><a class="nav-link" data-nav="services">Services</a></li>
-      <li class="nav-item"><a class="nav-link" data-nav="resume">Resume</a></li>
-      <li class="nav-item"><a class="nav-link" data-nav="projects">Projects</a></li>
-      <li class="nav-item"><a class="nav-link" data-nav="contact">Contact</a></li>
+      <li class="nav-item"><a class="nav-link" onclick="scrollToSection('home'); return false;">Home</a></li>
+      <li class="nav-item"><a class="nav-link" onclick="scrollToSection('about'); return false;">About</a></li>
+      <li class="nav-item"><a class="nav-link" onclick="scrollToSection('services'); return false;">Services</a></li>
+      <li class="nav-item"><a class="nav-link" onclick="scrollToSection('resume'); return false;">Resume</a></li>
+      <li class="nav-item"><a class="nav-link" onclick="scrollToSection('projects'); return false;">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" onclick="scrollToSection('contact'); return false;">Contact</a></li>
     </ul>
     <div style="display: flex; gap: 8px;">
       <button class="theme-toggle" id="theme-toggle"><i class="fas fa-moon"></i></button>
@@ -278,7 +278,6 @@
   <section id="home" class="page">
     <div class="video-background">
       <video autoplay muted loop playsinline poster="fallback-image.jpg">
-        <!-- public video from pixabay / coverr style (working placeholder) -->
         <source src="Background Video.mp4" type="video/mp4">
         <source src="Mobile Background Video.mp4" type="video/mp4">
         Your browser does not support the video tag.
@@ -289,8 +288,8 @@
       <h2>Cybersecurity & Network Engineer</h2>
       <p style="max-width:700px; margin:0 auto 2.8rem; font-size:1.3rem;">Secure networks · GNS3 · Python automation · Wireshark master</p>
       <div class="hero-cta">
-        <a class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'}); return false;">Explore Labs</a>
-        <a class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); return false;">Let's Talk</a>
+        <a class="btn" onclick="scrollToSection('projects'); return false;">Explore Labs</a>
+        <a class="btn btn-outline" onclick="scrollToSection('contact'); return false;">Let's Talk</a>
       </div>
     </div>
   </section>
@@ -300,15 +299,14 @@
       <div class="section-title"><h2>About Me</h2></div>
       <div class="about-content">
         <div class="profile-frame">
-          <!-- profile pic from same folder: profile pic.jpeg -->
           <img src="profile pic.jpeg" alt="Tahir Mehdi" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22600%22%20height%3D%22600%22%3E%3Ccircle%20cx%3D%22300%22%20cy%3D%22300%22%20r%3D%22280%22%20fill%3D%22%2300D4FF%22%2F%3E%3Ctext%20x%3D%22300%22%20y%3D%22350%22%20font-size%3D%2270%22%20fill%3D%22%23010B13%22%20text-anchor%3D%22middle%22%20dominant-baseline%3D%22middle%22%3ETM%3C%2Ftext%3E%3C%2Fsvg%3E'">
         </div>
         <div>
           <p class="bio-text"><strong>BSCS student</strong> · Cisco Networking Basics & CompTIA Network+ certified. I breathe VLANs, ACLs, and packet-level analysis.</p>
           <p style="font-size:1.2rem; margin:20px 0;">Packet Tracer & GNS3 everyday. Python for network automation. CCNA candidate · passionate about ethical hacking.</p>
           <div style="display:flex; gap:15px; margin-top:35px; flex-wrap:wrap;">
-            <a class="btn" onclick="document.getElementById('resume').scrollIntoView({behavior: 'smooth'}); return false;"><i class="fas fa-file-alt"></i> Resume</a>
-            <a class="btn btn-outline" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'}); return false;"><i class="fas fa-paper-plane"></i> Contact</a>
+            <a class="btn" onclick="scrollToSection('resume'); return false;"><i class="fas fa-file-alt"></i> Resume</a>
+            <a class="btn btn-outline" onclick="scrollToSection('contact'); return false;"><i class="fas fa-paper-plane"></i> Contact</a>
           </div>
         </div>
       </div>
@@ -316,35 +314,33 @@
   </section>
 
   <section id="services" class="page"><div class="container"><div class="section-title"><h2>Services / expertise</h2></div><div class="services-grid">
-    <div class="service-card"><div class="service-icon"><i class="fas fa-network-wired"></i></div><h4>Network Setup</h4><ul class="service-points"><li><i class="fas fa-angle-right"></i> LAN/WAN design & implementation</li><li><i class="fas fa-angle-right"></i> Routers, switches, VLANS</li><li><i class="fas fa-angle-right"></i> IP schemes, inter-VLAN</li></ul></div>
-    <div class="service-card"><div class="service-icon"><i class="fas fa-tools"></i></div><h4>Troubleshooting</h4><ul class="service-points"><li><i class="fas fa-angle-right"></i> Connectivity diagnostics</li><li><i class="fas fa-angle-right"></i> Router/switch error analysis</li><li><i class="fas fa-angle-right"></i> Performance fix</li></ul></div>
-    <div class="service-card"><div class="service-icon"><i class="fas fa-shield-halved"></i></div><h4>Security basics</h4><ul class="service-points"><li><i class="fas fa-angle-right"></i> ACLs, port security</li><li><i class="fas fa-angle-right"></i> Secure hardening</li><li><i class="fas fa-angle-right"></i> Firewall basics</li></ul></div>
-    <div class="service-card"><div class="service-icon"><i class="fas fa-chart-line"></i></div><h4>Monitoring</h4><ul class="service-points"><li><i class="fas fa-angle-right"></i> Wireshark / traceroute</li><li><i class="fas fa-angle-right"></i> Network diagrams</li><li><i class="fas fa-angle-right"></i> Health checks</li></ul></div>
-    <div class="service-card"><div class="service-icon"><i class="fas fa-laptop-house"></i></div><h4>Freelance</h4><ul class="service-points"><li><i class="fas fa-angle-right"></i> Small biz remote setup</li><li><i class="fas fa-angle-right"></i> Home office network</li><li><i class="fas fa-angle-right"></i> Workshops</li></ul></div>
+    <div class="service-card" onclick="showPopup('Service info','Detailed service guide & case studies coming soon.','fa-bolt')"><div class="service-icon"><i class="fas fa-network-wired"></i></div><h4>Network Setup</h4><ul class="service-points"><li><i class="fas fa-angle-right"></i> LAN/WAN design & implementation</li><li><i class="fas fa-angle-right"></i> Routers, switches, VLANS</li><li><i class="fas fa-angle-right"></i> IP schemes, inter-VLAN</li></ul></div>
+    <div class="service-card" onclick="showPopup('Service info','Detailed service guide & case studies coming soon.','fa-bolt')"><div class="service-icon"><i class="fas fa-tools"></i></div><h4>Troubleshooting</h4><ul class="service-points"><li><i class="fas fa-angle-right"></i> Connectivity diagnostics</li><li><i class="fas fa-angle-right"></i> Router/switch error analysis</li><li><i class="fas fa-angle-right"></i> Performance fix</li></ul></div>
+    <div class="service-card" onclick="showPopup('Service info','Detailed service guide & case studies coming soon.','fa-bolt')"><div class="service-icon"><i class="fas fa-shield-halved"></i></div><h4>Security basics</h4><ul class="service-points"><li><i class="fas fa-angle-right"></i> ACLs, port security</li><li><i class="fas fa-angle-right"></i> Secure hardening</li><li><i class="fas fa-angle-right"></i> Firewall basics</li></ul></div>
+    <div class="service-card" onclick="showPopup('Service info','Detailed service guide & case studies coming soon.','fa-bolt')"><div class="service-icon"><i class="fas fa-chart-line"></i></div><h4>Monitoring</h4><ul class="service-points"><li><i class="fas fa-angle-right"></i> Wireshark / traceroute</li><li><i class="fas fa-angle-right"></i> Network diagrams</li><li><i class="fas fa-angle-right"></i> Health checks</li></ul></div>
+    <div class="service-card" onclick="showPopup('Service info','Detailed service guide & case studies coming soon.','fa-bolt')"><div class="service-icon"><i class="fas fa-laptop-house"></i></div><h4>Freelance</h4><ul class="service-points"><li><i class="fas fa-angle-right"></i> Small biz remote setup</li><li><i class="fas fa-angle-right"></i> Home office network</li><li><i class="fas fa-angle-right"></i> Workshops</li></ul></div>
   </div></div></section>
 
   <section id="resume" class="page"><div class="container"><div class="section-title"><h2>Resume & credentials</h2></div><div class="resume-container"><div><h3>📘 Education</h3><div class="timeline-item"><span>2020-2021</span><h4>Matriculation</h4><p>BISE Multan</p></div><div class="timeline-item"><span>2022-2024</span><h4>Intermediate</h4><p>BISE Multan</p></div><div class="timeline-item"><span>Current</span><h4>BSCS</h4><p>Univ. of Southern Punjab</p></div><h3 style="margin-top:35px;">💼 Experience</h3><div class="timeline-item"><span>2023–Present</span><h4>Web Developer (Freelance)</h4></div><div class="timeline-item"><span>2024–Present</span><h4>Graphic Designer (Freelance)</h4></div></div><div><h3>⚙️ Skills</h3><h4 style="margin:20px 0 10px;">Networking & Security</h4><div class="skills-container"><div><div class="skill-name"><span>CISCO Basics</span><span>95%</span></div><div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div></div><div><div class="skill-name"><span>CompTIA Network+</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div></div><div><div class="skill-name"><span>Firewall & ACLs</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div></div><div><div class="skill-name"><span>Wireshark</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div></div></div></div></div>
     
-    <!-- certificates in a separate card style (like separate page feel) -->
     <div class="certificates-grid">
-      <div class="certificate-card" id="certNetworking">
+      <div class="certificate-card" onclick="showImageModal('Networking Basics.jpg'); event.stopPropagation();">
         <div class="certificate-img"><img src="Networking Basics.jpg" alt="Networking Basics" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22200%22%3E%3Crect%20width%3D%22300%22%20height%3D%22200%22%20fill%3D%22%23255a7a%22%2F%3E%3Ctext%20x%3D%2220%22%20y%3D%22120%22%20fill%3D%22white%22%20font-size%3D%2220%22%3ENetworking%20Basics%20(Cisco)%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
         <div class="certificate-info"><h4>Networking Basics</h4><p>Cisco Networking Academy · Feb 2026</p></div>
       </div>
-      <div class="certificate-card" id="certCCNA">
+      <div class="certificate-card" onclick="showImageModal('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22600%22%3E%3Crect%20width%3D%22800%22%20height%3D%22600%22%20fill%3D%22%23c9452c%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22300%22%20fill%3D%22white%22%20font-size%3D%2240%22%3ECCNA%20progress%20(March%202026)%3C%2Ftext%3E%3C%2Fsvg%3E'); event.stopPropagation();">
         <div class="certificate-img"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22300%22%20height%3D%22200%22%3E%3Crect%20width%3D%22300%22%20height%3D%22200%22%20fill%3D%22%23c9452c%22%2F%3E%3Ctext%20x%3D%2230%22%20y%3D%22120%22%20fill%3D%22white%22%20font-size%3D%2220%22%3E📌%20CCNA%20(in%20progress)%3C%2Ftext%3E%3C%2Fsvg%3E" alt="CCNA progress"></div>
         <div class="certificate-info"><h4>CCNA (200-301) – in progress</h4><p>Cisco · expected June 2026</p></div>
       </div>
     </div>
-    <!-- download resume link: TahirMehdi.pdf in same folder -->
     <div style="text-align:center;"><a class="btn" href="TahirMehdi.pdf" download><i class="fas fa-download"></i> Download Full Resume</a></div>
   </div></section>
 
   <section id="projects" class="page"><div class="container"><div class="section-title"><h2>Projects & Labs</h2></div><div class="projects-grid">
-    <div class="project-card"><div class="project-img"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%232d7a7b%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🌐%20VLAN%20Trunk%20lab%3C%2Ftext%3E%3C%2Fsvg%3E" alt="VLAN"></div><div class="project-info"><h3>VLAN & Trunking Lab</h3><p>Multi-switch with inter‑VLAN routing, VTP, ACLs.</p><div class="project-links"><button class="btn project-popup-trigger">.pkt</button><button class="btn btn-outline project-popup-trigger">Guide</button></div></div></div>
-    <div class="project-card"><div class="project-img"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%231d3a5c%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🐍%20Python%20Subnet%20Calc%3C%2Ftext%3E%3C%2Fsvg%3E" alt="subnet"></div><div class="project-info"><h3>Python Subnet Calculator</h3><p>CLI tool: network, broadcast, wildcard from CIDR.</p><div class="project-links"><button class="btn project-popup-trigger">Code</button><button class="btn btn-outline project-popup-trigger">Demo</button></div></div></div>
-    <div class="project-card"><div class="project-img"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%230a192f%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E📡%20Wireshark%20PCAP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="wireshark"></div><div class="project-info"><h3>Wireshark – HTTP & ARP</h3><p>Analysed malicious patterns, handshake analysis.</p><div class="project-links"><button class="btn project-popup-trigger">PCAP</button><button class="btn btn-outline project-popup-trigger">Report</button></div></div></div>
-    <div class="project-card"><div class="project-img"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%23c9452c%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🔥%20Extended%20ACL%20Lab%3C%2Ftext%3E%3C%2Fsvg%3E" alt="ACL"></div><div class="project-info"><h3>Extended ACL & Firewall</h3><p>Inbound/outbound ACLs, traffic filtering.</p><div class="project-links"><button class="btn project-popup-trigger">Topology</button><button class="btn btn-outline project-popup-trigger">Config</button></div></div></div>
+    <div class="project-card"><div class="project-img"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%232d7a7b%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🌐%20VLAN%20Trunk%20lab%3C%2Ftext%3E%3C%2Fsvg%3E" alt="VLAN"></div><div class="project-info"><h3>VLAN & Trunking Lab</h3><p>Multi-switch with inter‑VLAN routing, VTP, ACLs.</p><div class="project-links"><button class="btn project-popup-trigger" onclick="showPopup('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch'); event.stopPropagation();">.pkt</button><button class="btn btn-outline project-popup-trigger" onclick="showPopup('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch'); event.stopPropagation();">Guide</button></div></div></div>
+    <div class="project-card"><div class="project-img"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%231d3a5c%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🐍%20Python%20Subnet%20Calc%3C%2Ftext%3E%3C%2Fsvg%3E" alt="subnet"></div><div class="project-info"><h3>Python Subnet Calculator</h3><p>CLI tool: network, broadcast, wildcard from CIDR.</p><div class="project-links"><button class="btn project-popup-trigger" onclick="showPopup('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch'); event.stopPropagation();">Code</button><button class="btn btn-outline project-popup-trigger" onclick="showPopup('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch'); event.stopPropagation();">Demo</button></div></div></div>
+    <div class="project-card"><div class="project-img"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%230a192f%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E📡%20Wireshark%20PCAP%3C%2Ftext%3E%3C%2Fsvg%3E" alt="wireshark"></div><div class="project-info"><h3>Wireshark – HTTP & ARP</h3><p>Analysed malicious patterns, handshake analysis.</p><div class="project-links"><button class="btn project-popup-trigger" onclick="showPopup('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch'); event.stopPropagation();">PCAP</button><button class="btn btn-outline project-popup-trigger" onclick="showPopup('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch'); event.stopPropagation();">Report</button></div></div></div>
+    <div class="project-card"><div class="project-img"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%23c9452c%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🔥%20Extended%20ACL%20Lab%3C%2Ftext%3E%3C%2Fsvg%3E" alt="ACL"></div><div class="project-info"><h3>Extended ACL & Firewall</h3><p>Inbound/outbound ACLs, traffic filtering.</p><div class="project-links"><button class="btn project-popup-trigger" onclick="showPopup('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch'); event.stopPropagation();">Topology</button><button class="btn btn-outline project-popup-trigger" onclick="showPopup('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch'); event.stopPropagation();">Config</button></div></div></div>
   </div></div></section>
 
   <section id="contact" class="page"><div class="container"><div class="section-title"><h2>Get in touch</h2></div><div class="contact-content"><div><h3>Let's connect</h3><p>Available for networking roles / freelance / tech chat.</p><div class="contact-item"><i class="fas fa-envelope"></i> <span>tahirmehdi001@gmail.com</span></div><div class="contact-item"><i class="fas fa-phone-alt"></i> <span>+92-330-4166073</span></div><div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Multan, Pakistan</span></div><div style="margin-top:25px;"><a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a><a href="#" class="social-icon"><i class="fab fa-github"></i></a></div></div><div class="contact-form"><form id="contactForm" onsubmit="event.preventDefault(); alert('Message sent (demo)');"><div class="form-group"><input type="text" placeholder="Your name"></div><div class="form-group"><input type="email" placeholder="Email address"></div><div class="form-group"><input type="text" placeholder="Subject"></div><div class="form-group"><textarea rows="5" placeholder="Message..."></textarea></div><button type="submit" class="btn" style="width:100%;">Send message</button></form></div></div></div></section>
@@ -353,10 +349,49 @@
 <footer class="footer"><div style="text-align:center; margin-bottom:25px;"><a href="https://www.linkedin.com/in/tahirmehdi18/" class="social-icon"><i class="fab fa-linkedin-in"></i></a><a href="https://github.com/maharsiyal56-netizen" class="social-icon"><i class="fab fa-github"></i></a><a href="mailto:tahirmehdi001@gmail.com" class="social-icon"><i class="far fa-envelope"></i></a></div><p class="copyright" style="text-align:center;">© <span id="current-year">2025</span> Tahir Mehdi — built with packet tracer vibes</p></footer>
 
 <!-- MODALS -->
-<div id="imageModal" class="modal"><div class="modal-content large"><span class="close-icon" id="closeImageModal">&times;</span><img id="modalImage" src="" alt=""><div style="text-align:center;"><button class="close-btn" id="closeImageBtn">Close</button></div></div></div>
-<div id="popupModal" class="modal"><div class="modal-content small-modal"><span class="close-icon" id="closePopupIcon">&times;</span><i class="fas fa-certificate" id="modalIcon" style="font-size:4rem;"></i><h3 id="modalTitle">Title</h3><p id="modalMessage">Message</p><button class="close-btn" id="closePopupBtn">Close</button></div></div>
+<div id="imageModal" class="modal"><div class="modal-content large"><span class="close-icon" onclick="closeImageModal()">&times;</span><img id="modalImage" src="" alt=""><div style="text-align:center;"><button class="close-btn" onclick="closeImageModal()">Close</button></div></div></div>
+<div id="popupModal" class="modal"><div class="modal-content small-modal"><span class="close-icon" onclick="closePopupModal()">&times;</span><i class="fas fa-certificate" id="modalIcon" style="font-size:4rem;"></i><h3 id="modalTitle">Title</h3><p id="modalMessage">Message</p><button class="close-btn" onclick="closePopupModal()">Close</button></div></div>
 
 <script>
+  // Global functions for modal handling
+  function showImageModal(src) {
+    document.getElementById('modalImage').src = src;
+    document.getElementById('imageModal').style.display = 'flex';
+  }
+  
+  function closeImageModal() {
+    document.getElementById('imageModal').style.display = 'none';
+  }
+  
+  function showPopup(title, msg, icon = 'fa-certificate') {
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalMessage').innerText = msg;
+    document.getElementById('modalIcon').className = `fas ${icon} fa-4x`;
+    document.getElementById('popupModal').style.display = 'flex';
+  }
+  
+  function closePopupModal() {
+    document.getElementById('popupModal').style.display = 'none';
+  }
+
+  function scrollToSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      const headerHeight = document.querySelector('header').offsetHeight;
+      window.scrollTo({
+        top: section.offsetTop - headerHeight,
+        behavior: 'smooth'
+      });
+    }
+    // Close mobile menu if open
+    const navMenu = document.querySelector('.nav-menu');
+    const hamburger = document.getElementById('hamburger');
+    if (navMenu.classList.contains('active')) {
+      navMenu.classList.remove('active');
+      hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+  }
+
   (function(){
     const themeToggle = document.getElementById('theme-toggle');
     const hamburger = document.getElementById('hamburger');
@@ -372,51 +407,55 @@
     });
     if(localStorage.getItem('theme')==='dark') { document.body.classList.add('dark-mode'); themeToggle.innerHTML='<i class="fas fa-sun"></i>'; }
 
-    hamburger.addEventListener('click', ()=>{ navMenu.classList.toggle('active'); hamburger.innerHTML = navMenu.classList.contains('active')?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>'; });
+    hamburger.addEventListener('click', ()=>{ 
+      navMenu.classList.toggle('active'); 
+      hamburger.innerHTML = navMenu.classList.contains('active')?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>'; 
+    });
 
     const sections = document.querySelectorAll('.page');
     const headerHeight = document.querySelector('header').offsetHeight;
+    
     function setActiveLink(){
       let current = '';
-      sections.forEach(s=>{ const top = s.offsetTop - headerHeight - 10; if(window.scrollY >= top && window.scrollY < top + s.offsetHeight) current = s.getAttribute('id'); });
-      navLinks.forEach(link=>{ link.classList.remove('active'); if(link.getAttribute('data-nav') === current) link.classList.add('active'); });
+      sections.forEach(s=>{ 
+        const top = s.offsetTop - headerHeight - 10; 
+        if(window.scrollY >= top && window.scrollY < top + s.offsetHeight) 
+          current = s.getAttribute('id'); 
+      });
+      navLinks.forEach(link=>{ 
+        link.classList.remove('active'); 
+        if(link.textContent.toLowerCase().trim() === current) 
+          link.classList.add('active'); 
+      });
     }
-    navLinks.forEach(link=>{ link.addEventListener('click', (e)=>{ e.preventDefault(); const id = link.getAttribute('data-nav'); if(id){ const target=document.getElementById(id); if(target) window.scrollTo({top:target.offsetTop-headerHeight, behavior:'smooth'}); } if(navMenu.classList.contains('active')){ navMenu.classList.remove('active'); hamburger.innerHTML='<i class="fas fa-bars"></i>'; } }); });
-    window.addEventListener('scroll', setActiveLink); setActiveLink();
+    
+    window.addEventListener('scroll', setActiveLink); 
+    setActiveLink();
 
-    const observer = new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting && entry.target.id==='resume') { skillBars.forEach(bar=>{ bar.style.width = bar.getAttribute('data-width'); }); } }); }, {threshold:0.2});
+    const observer = new IntersectionObserver((entries)=>{ 
+      entries.forEach(entry=>{ 
+        if(entry.isIntersecting && entry.target.id==='resume') { 
+          skillBars.forEach(bar=>{ 
+            bar.style.width = bar.getAttribute('data-width'); 
+          }); 
+        } 
+      }); 
+    }, {threshold:0.2});
+    
     observer.observe(document.getElementById('resume'));
     skillBars.forEach(bar=>bar.style.width='0');
 
-    const imageModal = document.getElementById('imageModal');
-    const modalImg = document.getElementById('modalImage');
-    const closeImageModal = document.getElementById('closeImageModal');
-    const closeImageBtn = document.getElementById('closeImageBtn');
-    const popupModal = document.getElementById('popupModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalMsg = document.getElementById('modalMessage');
-    const modalIcon = document.getElementById('modalIcon');
-    const closePopupIcon = document.getElementById('closePopupIcon');
-    const closePopupBtn = document.getElementById('closePopupBtn');
+    // Close modals when clicking outside
+    window.addEventListener('click', (e) => { 
+      if(e.target === document.getElementById('imageModal')) closeImageModal(); 
+      if(e.target === document.getElementById('popupModal')) closePopupModal(); 
+    });
 
-    function showImageModal(src) { modalImg.src = src; imageModal.style.display = 'flex'; }
-    function closeImageFunc() { imageModal.style.display = 'none'; }
-    closeImageModal.addEventListener('click', closeImageFunc); closeImageBtn.addEventListener('click', closeImageFunc);
-    function showPopup(title, msg, icon='fa-certificate'){ modalTitle.innerText = title; modalMsg.innerText = msg; modalIcon.className = `fas ${icon} fa-4x`; popupModal.style.display = 'flex'; }
-    function closePopupFunc() { popupModal.style.display = 'none'; }
-    closePopupIcon.addEventListener('click', closePopupFunc); closePopupBtn.addEventListener('click', closePopupFunc);
-    window.addEventListener('click', (e) => { if(e.target === imageModal) closeImageFunc(); if(e.target === popupModal) closePopupFunc(); });
-
-    // certificate click -> show actual Networking Basics.jpg in modal
-    document.getElementById('certNetworking').addEventListener('click', (e)=>{ e.stopPropagation(); showImageModal('Networking Basics.jpg'); });
-    document.getElementById('certCCNA').addEventListener('click', (e)=>{ e.stopPropagation(); showImageModal('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22600%22%3E%3Crect%20width%3D%22800%22%20height%3D%22600%22%20fill%3D%22%23c9452c%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22300%22%20fill%3D%22white%22%20font-size%3D%2240%22%3ECCNA%20progress%20(March%202026)%3C%2Ftext%3E%3C%2Fsvg%3E'); });
-
-    document.querySelectorAll('.project-popup-trigger').forEach(btn => { btn.addEventListener('click', (e)=>{ e.stopPropagation(); showPopup('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch'); }); });
-    document.querySelectorAll('.service-card').forEach(card => { card.addEventListener('click', ()=> showPopup('Service info','Detailed service guide & case studies coming soon.','fa-bolt'); }));
-
-    // Add click handlers for any additional navigation buttons
-    document.querySelectorAll('[onclick*="scrollIntoView"]').forEach(btn => {
-      // Already handled by inline onclick
+    // Prevent event bubbling for certificate cards
+    document.querySelectorAll('.certificate-card').forEach(card => {
+      card.addEventListener('click', function(e) {
+        e.stopPropagation();
+      });
     });
   })();
 </script>
