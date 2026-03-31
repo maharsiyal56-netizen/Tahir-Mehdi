@@ -98,10 +98,36 @@
     .section-title::after { background: #00D4FF; }
     .timeline-item { border-left-color: #00D4FF; }
     .skill-progress { background: linear-gradient(90deg, #005B96, #00D4FF); }
-    .certificate-card, .project-card, .service-card, .contact-content {
+    .certificate-card, .project-card, .service-card, .contact-content, .roadmap-card {
       background: #02121f; backdrop-filter: blur(5px);
       border: 1px solid #00D4FF22; border-radius: 30px;
       box-shadow: 0 20px 40px -15px #00000080, 0 0 0 1px #00D4FF10;
+    }
+    .roadmap-card {
+      padding: 30px 25px;
+      transition: var(--transition);
+      cursor: default;
+    }
+    .roadmap-card:hover {
+      border-color: #00D4FF; box-shadow: 0 0 35px #00D4FF40, var(--shadow-hover);
+      transform: translateY(-6px);
+    }
+    .roadmap-card i {
+      font-size: 2.8rem;
+      background: linear-gradient(145deg, #00D4FF, #ec7e66);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .roadmap-card h4 {
+      font-size: 1.7rem;
+      margin-bottom: 15px;
+      color: #eef5ff;
+    }
+    .roadmap-card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #bbdef5;
     }
     .service-card:hover {
       border-color: #00D4FF; box-shadow: 0 0 35px #00D4FF40, var(--shadow-hover);
@@ -234,7 +260,16 @@
     .small-modal { max-width: 500px; background: #021622; border: 3px solid #00D4FF; border-radius: 50px; padding: 50px; text-align: center; }
     .close-icon { position: absolute; top:20px; right:30px; font-size: 3rem; color: #00D4FF; cursor: pointer; }
     .close-btn { background: #005B96; color: white; border: none; padding: 12px 40px; border-radius: 60px; margin-top: 25px; font-size: 1.2rem; cursor: pointer; }
-
+    .quote-block {
+      background: #02121faa; border-left: 6px solid #00D4FF; padding: 28px 30px; border-radius: 50px;
+      margin: 40px 0 30px; text-align: center; font-style: italic; font-size: 1.5rem;
+      backdrop-filter: blur(4px);
+      font-weight: 500;
+      box-shadow: 0 10px 20px -5px #00D4FF20;
+    }
+    .quote-block i {
+      color: #00D4FF; margin-right: 12px;
+    }
     @media (max-width: 1024px) { .about-content, .resume-container, .contact-content { grid-template-columns: 1fr; } }
     @media (max-width: 768px) {
       .nav-menu {
@@ -246,10 +281,12 @@
       .hamburger { display: flex; }
       .projects-grid, .services-grid { grid-template-columns: 1fr; }
       .hero-cta .btn { display: block; width: 80%; margin: 15px auto; }
+      .roadmap-card h4 { font-size: 1.4rem; }
     }
     @media (max-width: 480px) {
       .btn { padding: 14px 20px; font-size: 1rem; }
       .section-title h2 { font-size: 2rem; }
+      .quote-block { font-size: 1.2rem; padding: 20px; }
     }
     .project-popup-trigger { padding: 12px 20px; font-size: 0.9rem; }
   </style>
@@ -264,6 +301,7 @@
       <li class="nav-item"><a class="nav-link" onclick="scrollToSection('services'); return false;">Services</a></li>
       <li class="nav-item"><a class="nav-link" onclick="scrollToSection('resume'); return false;">Resume</a></li>
       <li class="nav-item"><a class="nav-link" onclick="scrollToSection('projects'); return false;">Projects</a></li>
+      <li class="nav-item"><a class="nav-link" onclick="scrollToSection('roadmap'); return false;">Roadmap</a></li>
       <li class="nav-item"><a class="nav-link" onclick="scrollToSection('contact'); return false;">Contact</a></li>
     </ul>
     <div style="display: flex; gap: 8px;">
@@ -343,6 +381,28 @@
     <div class="project-card"><div class="project-img"><img src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22400%22%20height%3D%22260%22%3E%3Crect%20width%3D%22400%22%20height%3D%22260%22%20fill%3D%22%23c9452c%22%2F%3E%3Ctext%20x%3D%2250%22%20y%3D%22140%22%20fill%3D%22white%22%20font-size%3D%2224%22%3E🔥%20Extended%20ACL%20Lab%3C%2Ftext%3E%3C%2Fsvg%3E" alt="ACL"></div><div class="project-info"><h3>Extended ACL & Firewall</h3><p>Inbound/outbound ACLs, traffic filtering.</p><div class="project-links"><button class="btn project-popup-trigger" onclick="showPopup('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch'); event.stopPropagation();">Topology</button><button class="btn btn-outline project-popup-trigger" onclick="showPopup('Project in progress','This project is currently in progress – it will be displayed soon!','fa-code-branch'); event.stopPropagation();">Config</button></div></div></div>
   </div></div></section>
 
+  <!-- NEW ROADMAP SECTION: My Goal & Roadmap -->
+  <section id="roadmap" class="page">
+    <div class="container">
+      <div class="section-title"><h2>My Goal & Roadmap</h2></div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin: 20px 0 20px;">
+        <div class="roadmap-card"><i class="fas fa-graduation-cap"></i><h4>🎓 Academic Qualification</h4><p><strong>ADP CS (Associate Degree Program)</strong> – In Progress.<br>After completion → transition to <strong>BSCS (5th Semester)</strong>, completing full 4-year degree equivalent.</p></div>
+        <div class="roadmap-card"><i class="fas fa-network-wired"></i><h4>📡 Networking Foundation</h4><p><strong>CCNA (Cisco Certified Network Associate)</strong> – In Progress. Building strong fundamentals: Routing & Switching, VLANs, troubleshooting, network automation.</p></div>
+        <div class="roadmap-card"><i class="fas fa-shield-halved"></i><h4>🔐 Security Certification</h4><p><strong>CompTIA Security+ (SY0-701)</strong> – Next milestone. Core cybersecurity concepts, risk management, cryptography, network defense.</p></div>
+        <div class="roadmap-card"><i class="fas fa-briefcase"></i><h4>💼 Practical Experience</h4><p>Apply for <strong>Network Analyst / Network Engineer</strong> roles. Real-world IT environment exposure, strengthening networking & security skills.</p></div>
+        <div class="roadmap-card"><i class="fas fa-user-secret"></i><h4>🔥 Advanced Pentesting</h4><p><strong>eJPT → eCPPT → eWPT → eCPTX → OSCP</strong><br>Progressive ethical hacking certifications: from junior to advanced penetration testing expert.</p></div>
+        <div class="roadmap-card"><i class="fas fa-bullseye"></i><h4>🎯 Career Goal</h4><p>Become a highly skilled <strong>Cybersecurity Expert & Penetration Tester</strong> with expertise in Network Security, Web Application Security, and advanced red team operations.</p></div>
+      </div>
+      <div class="quote-block">
+        <i class="fas fa-quote-left"></i> Be patient and you will get what you want<br>
+        <span style="font-size: 1rem; display: block; margin-top: 10px;">— Imam Ali (A.S)</span>
+      </div>
+      <div style="text-align: center; margin-top: 25px;">
+        <button class="btn" onclick="showPopup('📘 Full Roadmap', 'My complete career strategy: ADP CS ➜ BSCS ➜ CCNA ➜ Security+ ➜ Real experience ➜ eJPT/eCPPT/OSCP. Stay focused! The roadmap PDF will be ready soon. Contact for mentorship. 🔥', 'fa-download')"><i class="fas fa-download"></i> Download Roadmap (PDF)</button>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="page"><div class="container"><div class="section-title"><h2>Get in touch</h2></div><div class="contact-content"><div><h3>Let's connect</h3><p>Available for networking roles / freelance / tech chat.</p><div class="contact-item"><i class="fas fa-envelope"></i> <span>tahirmehdi001@gmail.com</span></div><div class="contact-item"><i class="fas fa-phone-alt"></i> <span>+92-330-4166073</span></div><div class="contact-item"><i class="fas fa-map-marker-alt"></i> <span>Multan, Pakistan</span></div><div style="margin-top:25px;"><a href="https://www.linkedin.com/in/tahirmehdi18/" class="social-icon"><i class="fab fa-linkedin-in"></i></a><a href="https://github.com/maharsiyal56-netizen" class="social-icon"><i class="fab fa-github"></i></a></div></div><div class="contact-form"><form id="contactForm" onsubmit="event.preventDefault(); alert('Message sent (demo)');"><div class="form-group"><input type="text" placeholder="Your Name"></div><div class="form-group"><input type="email" placeholder="Email address"></div><div class="form-group"><input type="text" placeholder="Subject"></div><div class="form-group"><textarea rows="5" placeholder="Message..."></textarea></div><button type="submit" class="btn" style="width:100%;">Send message</button></form></div></div></div></section>
 </main>
 
@@ -353,37 +413,28 @@
 <div id="popupModal" class="modal"><div class="modal-content small-modal"><span class="close-icon" onclick="closePopupModal()">&times;</span><i class="fas fa-certificate" id="modalIcon" style="font-size:4rem;"></i><h3 id="modalTitle">Title</h3><p id="modalMessage">Message</p><button class="close-btn" onclick="closePopupModal()">Close</button></div></div>
 
 <script>
-  // Global functions for modal handling
   function showImageModal(src) {
     document.getElementById('modalImage').src = src;
     document.getElementById('imageModal').style.display = 'flex';
   }
-  
   function closeImageModal() {
     document.getElementById('imageModal').style.display = 'none';
   }
-  
   function showPopup(title, msg, icon = 'fa-certificate') {
     document.getElementById('modalTitle').innerText = title;
     document.getElementById('modalMessage').innerText = msg;
     document.getElementById('modalIcon').className = `fas ${icon} fa-4x`;
     document.getElementById('popupModal').style.display = 'flex';
   }
-  
   function closePopupModal() {
     document.getElementById('popupModal').style.display = 'none';
   }
-
   function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
     if (section) {
       const headerHeight = document.querySelector('header').offsetHeight;
-      window.scrollTo({
-        top: section.offsetTop - headerHeight,
-        behavior: 'smooth'
-      });
+      window.scrollTo({ top: section.offsetTop - headerHeight, behavior: 'smooth' });
     }
-    // Close mobile menu if open
     const navMenu = document.querySelector('.nav-menu');
     const hamburger = document.getElementById('hamburger');
     if (navMenu.classList.contains('active')) {
@@ -391,7 +442,6 @@
       hamburger.innerHTML = '<i class="fas fa-bars"></i>';
     }
   }
-
   (function(){
     const themeToggle = document.getElementById('theme-toggle');
     const hamburger = document.getElementById('hamburger');
@@ -414,7 +464,6 @@
 
     const sections = document.querySelectorAll('.page');
     const headerHeight = document.querySelector('header').offsetHeight;
-    
     function setActiveLink(){
       let current = '';
       sections.forEach(s=>{ 
@@ -428,34 +477,25 @@
           link.classList.add('active'); 
       });
     }
-    
     window.addEventListener('scroll', setActiveLink); 
     setActiveLink();
 
     const observer = new IntersectionObserver((entries)=>{ 
       entries.forEach(entry=>{ 
         if(entry.isIntersecting && entry.target.id==='resume') { 
-          skillBars.forEach(bar=>{ 
-            bar.style.width = bar.getAttribute('data-width'); 
-          }); 
+          skillBars.forEach(bar=>{ bar.style.width = bar.getAttribute('data-width'); }); 
         } 
       }); 
     }, {threshold:0.2});
-    
     observer.observe(document.getElementById('resume'));
     skillBars.forEach(bar=>bar.style.width='0');
 
-    // Close modals when clicking outside
     window.addEventListener('click', (e) => { 
       if(e.target === document.getElementById('imageModal')) closeImageModal(); 
       if(e.target === document.getElementById('popupModal')) closePopupModal(); 
     });
-
-    // Prevent event bubbling for certificate cards
     document.querySelectorAll('.certificate-card').forEach(card => {
-      card.addEventListener('click', function(e) {
-        e.stopPropagation();
-      });
+      card.addEventListener('click', function(e) { e.stopPropagation(); });
     });
   })();
 </script>
